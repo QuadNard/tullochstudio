@@ -2,26 +2,140 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+     --color-primary: hsl(281.853, 100%, 68%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Cursor CSS */
+
+.Cursor{
+    width: 13px;
+    height: 13px;
+    background-color: 	#dc5a5a;
+    position: fixed;
+    border-radius: 50%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    /* Replace with the desired track color */
+}
+
+/* Thumb style */
+::-webkit-scrollbar-thumb {
+    border-radius: 0.6em;
+    background: #ccc;
+    /* Replace with the desired thumb color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+    /* Replace with the desired hover color */
+}
+
+/* Thumb active style */
+::-webkit-scrollbar-thumb:active {
+    background: #aaa;
+    /* Replace with the desired active color */
+}
+
+
+/* https://codepen.io/FlorinPop17/pen/drJJzK */
+/* Pulse Effects */
+
+
+.app__navbar{
+    width: 100%;
+    display: flex;;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1rem 2rem;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.app__navbar.scrolled {
+    opacity: 1;
+}
+
+.arrow-scroll {
+    position: relative;
+    height: 4em;
+}
+
+.arrow {
+    border: solid #ebff0d;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 12px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow:nth-child(2){
+    animation: arrow1 1.5s ease-in-out infinite;
+}
+
+.arrow:nth-child(3) {
+    animation: arrow2 1.5s ease-in-out infinite;
+}
+
+@keyframes arrow2 {
+    100% {
+        opacity: 0;
+        top: 50%;
+    }
+}
+
+.container {
+  display: flex; 
+  align-items: center;
+}
+
+.projectContainer{
+  position: relative;
+  width: 100%;
+}
+
+.projectContainer div{
+  border-top: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: -2vw;
+  background-color: transparent;
+}
+
+.projectContainer div p{
+  margin: 0px;
+  font-size: 5vw;
+  padding-left: 10px;
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    z-index: 1000;
+
 }
