@@ -92,17 +92,7 @@ const HeaderHero = () => {
             transition={{ duration: 0.3, delay: 1, }}
             className='flex flex-wrap space-x-4 justify-center'
         >
-            <button className='font-medium bg-gradient-to-r from-pink-500 to-yellow-600 text-white shadow-lg rounded-md p-1'>
-                over 5000 lines of code ! 
-            </button>
-            <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 1, }}
-                className='text-lg font-medium text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-pink-500 pr-2'
-            >
-                100 + Hours of Coding
-            </motion.p>
+          
         </motion.div>
          
         </>
@@ -131,7 +121,7 @@ const BannerIntro = () => {
   
 
     return(
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center mt-24'>
             <HeaderHero />
              <div className='flex flex-col sm:flex-row flex-wrap pb-14 pt-14 sm:pt-0 sm:pb-0'>
                 <div className='flex flex-row'>

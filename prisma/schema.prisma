@@ -1,0 +1,100 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                    String         @id @default(uuid())
+  email                 String         @unique @db.VarChar(255)
+  username              String         @unique @db.VarChar(100)
+  github_id             String         @unique @db.VarChar(100)
+  is_admin              Boolean        @default(false)
+  is_active             Boolean        @default(true)
+  created_at            DateTime       @default(now())
+  updated_at            DateTime       @default(now())
+  posts                 Post[]
+  comments              Comment[]
+  likes                 Like[]
+  notifications         Notification[] @relation(name: "myNotifications")
+  related_notifications Notification[] @relation(name: "relatedNotifications")
+}
+
+model Category {
+  id    String @id @default(uuid())
+  name  String @db.VarChar(20)
+  slug  String @db.VarChar(30)
+  posts Post[]
+}
+
+model Post {
+  id                String     @id @default(uuid())
+  title             String     @db.VarChar(128)
+  short_description String     @db.VarChar(256)
+  author            User       @relation(fields: [author_id], references: [id], onDelete: Cascade)
+  author_id         String
+  content           String     @db.Text
+  visibility        Visibility @default(PUBLIC)
+  Category          Category   @relation(fields: [category_id], references: [id], onDelete: Cascade)
+  category_id       String
+  comments          Comment[]
+  likes             Like[]
+  created_at        DateTime   @default(now())
+  updated_at        DateTime   @default(now())
+}
+
+model Comment {
+  id         String   @id @default(uuid())
+  author     User     @relation(fields: [author_id], references: [id], onDelete: Cascade)
+  author_id  String
+  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  post_id    String
+  content    String
+  created_at DateTime @default(now())
+  updated_at DateTime @default(now())
+  approved   Boolean  @default(true)
+}
+
+model Like {
+  id         String   @id @default(uuid())
+  user       User     @relation(fields: [user_id], references: [id])
+  user_id    String
+  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
+  post_id    String
+  created_at DateTime @default(now())
+}
+
+model Notification {
+  id         String             @id @default(uuid())
+  type       NotificationType
+  status     NotificationStatus @default(UNREAD)
+  from       User               @relation(name: "relatedNotifications", fields: [from_id], references: [id], onDelete: Cascade)
+  from_id    String
+  to         User               @relation(name: "myNotifications", fields: [to_id], references: [id], onDelete: Cascade)
+  to_id      String
+  post_id    String?
+  created_at DateTime           @default(now())
+}
+
+enum Visibility {
+  PUBLIC
+  PRIVATE
+  UNLISTED
+}
+
+enum NotificationType {
+  LIKE
+  COMMENT
+  FOLLOW
+}
+
+enum NotificationStatus {
+  READ
+  UNREAD
+}

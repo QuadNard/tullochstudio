@@ -52,18 +52,9 @@
 
 
 .app__navbar{
-    width: 100%;
-    display: flex;;
-    justify-content: space-between;
-    align-items: center;
-    padding:  1rem 2rem;
-    background: rgba(255, 255, 255, 0.6);
+    background: transparent;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    position: fixed;
-    z-index: 50;
-    opacity: 0;
     transition: opacity 0.5s ease;
 }
 
@@ -138,4 +129,25 @@
     border: 2px solid white;
     z-index: 1000;
 
+}
+
+.leaflet-container {
+    position: relative;
+  box-sizing: border-box;
+  height: 100%;
+  flex: 1 1 45%;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0 auto;
+  padding: 0 1rem;
+  border-radius: 10px;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    min-height: 250px;
+  }
+}
+
+.leaflet-control-attribution {
+  display: none;
 }

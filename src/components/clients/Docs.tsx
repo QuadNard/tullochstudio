@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import FadeUp from './ui/FadeUp';
+import FadeUp from '@/components/ui/FadeUp';
 import { gsap } from 'gsap';
 
 const sections = [
@@ -28,6 +28,7 @@ const sections = [
 ]
 
 
+
 export default function Docs() {
       const manageMouseEnter = (e: any, index: any) => {
     gsap.to(e.target, {top: "-2vw", backgroundColor: sections[index].color, duration: 0.3})
@@ -36,17 +37,11 @@ export default function Docs() {
   const manageMouseLeave = (e:any, index: any) => {
     gsap.to(e.target, {top: "0", backgroundColor: "white", duration: 0.3, delay: 0.1})
   }
-
-
     return(
         <section id='Docs' className='flex w-full h-screen p-10 justify-center'>
        <div className='flex flex-col'>
-         <FadeUp> 
-                 <h1 className="text-5xl flex flex-col items-center pt-14">DOCS</h1>
-
-          </FadeUp>
-        
-           <div className='mt-10 grid md:grid-cols-2 gap-20 place-items-center'>
+              <h1 className="text-5xl flex flex-col items-center pt-14">DOCS</h1>
+       <div className='mt-10 grid md:grid-cols-2 gap-20 place-items-center'>
              {/* Left Side */}
             <div className='flex flex-col gap-6 xl:gap-10 '>
 

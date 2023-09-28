@@ -9,10 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^5.3.1",
     "@radix-ui/themes": "^2.0.0-rc.3",
+    "@react-google-maps/api": "^2.19.2",
+    "@react-leaflet/core": "^2.1.0",
     "@tailwindcss/forms": "^0.5.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.10",
+    "@types/leaflet": "^1.9.6",
+    "@types/leaflet.markercluster": "^1.5.2",
+    "@types/lodash": "^4.14.199",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
@@ -21,8 +27,11 @@
     "clsx": "^2.0.0",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.2",
+    "esri-leaflet": "^3.0.11",
+    "esri-leaflet-vector": "^4.1.0",
     "framer-motion": "^10.16.4",
     "gsap": "^3.12.2",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.279.0",
     "next": "13.5.2",
     "next-themes": "^0.2.1",
@@ -32,6 +41,7 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.11.0",
     "react-intersection-observer": "^9.5.2",
+    "react-leaflet": "^4.2.1",
     "react-scroll": "^1.8.9",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "3.3.3",
@@ -39,6 +49,8 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "prettier": "^3.0.3"
+    "@types/esri-leaflet": "^3.0.1",
+    "prettier": "^3.0.3",
+    "prisma": "^5.3.1"
   }
 }
