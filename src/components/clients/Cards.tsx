@@ -32,7 +32,7 @@ const fadeInAnimationVariants = {
 
 export const InfoCard = ({delay}: props) => {
     return (
-        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-3'
+        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/50 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-3'
          variants={fadeInAnimationVariants}
          initial="initial"
          whileInView="animate"
@@ -60,7 +60,7 @@ export const InfoCard = ({delay}: props) => {
 
 export const StatsCard = ({delay}: props) => {
     return (
-        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-3'
+        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/50 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-3'
            variants={fadeInAnimationVariants}
          initial="initial"
          whileInView="animate"
@@ -129,7 +129,7 @@ export const StatsCard = ({delay}: props) => {
 
 
     return (
-        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-4'
+        <motion.div className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/50 backdrop-blur rounded-3xl md:rounded-4xl md:col-span-4'
           variants={fadeInAnimationVariants}
           initial="initial"
           whileInView="animate"
@@ -198,7 +198,7 @@ export const StatsCard = ({delay}: props) => {
 
 export const ProfileCard = ({delay}: props) => {
     return (
-        <motion.div  className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/5 backdrop-blur rounded-3xl md:rounded-4xl overflow-hidden md:col-span-2'
+        <motion.div  className='relative z-0 grid gap-6 p-6 md:gap-8 md:p-8 bg-white/50 backdrop-blur rounded-3xl md:rounded-4xl overflow-hidden md:col-span-2'
          variants={fadeInAnimationVariants}
          initial="initial"
          whileInView="animate"

@@ -1,4 +1,4 @@
-import { Navigation, Info, Stats, Project, Profile } from './types';
+import { Navigation, Info, Stats, Project, Profile } from '@/types/types';
 
 
 

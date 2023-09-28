@@ -74,7 +74,7 @@ const HeaderHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 1, }}
-            className='text-gray-400 text-sm sm:text-lg lg:text-xl mb-3 font-semibold'
+            className='text-black text-sm sm:text-lg lg:text-xl mb-3 font-semibold'
         >
             Frontend Developer | Backend Developer 
         </motion.h3>

@@ -93,32 +93,6 @@
     }
 }
 
-.container {
-  display: flex; 
-  align-items: center;
-}
-
-.projectContainer{
-  position: relative;
-  width: 100%;
-}
-
-.projectContainer div{
-  border-top: 1px solid black;
-  cursor: pointer;
-  position: relative;
-  margin-bottom: -2vw;
-  background-color: transparent;
-}
-
-.projectContainer div p{
-  margin: 0px;
-  font-size: 5vw;
-  padding-left: 10px;
-  text-transform: uppercase;
-  pointer-events: none;
-}
-
 .cursor {
     position: absolute;
     top: 0;
@@ -128,26 +102,6 @@
     border-radius: 50%;
     border: 2px solid white;
     z-index: 1000;
-
 }
 
-.leaflet-container {
-    position: relative;
-  box-sizing: border-box;
-  height: 100%;
-  flex: 1 1 45%;
-  box-sizing: border-box;
-  background-color: transparent;
-  margin: 0 auto;
-  padding: 0 1rem;
-  border-radius: 10px;
 
-  @media screen and (max-width: 900px) {
-    width: 100%;
-    min-height: 250px;
-  }
-}
-
-.leaflet-control-attribution {
-  display: none;
-}

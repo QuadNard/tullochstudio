@@ -19,7 +19,7 @@ return (
                         {navigations.map(({ id, name, path }) => (
                                 <li key={id}>
                                     <Link href={path}>
-                                        <h1 className='text-lg font-medium transition duration-100 ease-in-out transform hover:text-blue-400 hover:scale-105'>{name}</h1>
+                                        <h4 className='px-2 pt-5 pb-2 text-sm font-medium text-opacity-40 transition duration-100 ease-in-out transform hover:text-blue-400 hover:scale-105'>{name}</h4>
                                     </Link>
                                 </li>
                         ))}
