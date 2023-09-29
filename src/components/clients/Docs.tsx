@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { gsap } from 'gsap';
+import { useSession, signIn } from "next-auth/react";
+import { Button } from '@/components/ui/Button';
 
 const sections = [
     {
@@ -29,6 +31,10 @@ const sections = [
 
 
 export default function Docs() {
+      const { data: session } = useSession();
+  const { user } = session || {};
+   console.log(user)
+  
       const manageMouseEnter = (e: any, index: any) => {
     gsap.to(e.target, {top: "-2vw", backgroundColor: sections[index].color, duration: 0.3})
   }
@@ -47,9 +53,9 @@ export default function Docs() {
             <div className='flex flex-col gap-6 xl:gap-10 '>
 
                 <h1 className='text-2xl sm:text-4xl mb-5 text-slate-950 font-poppins font-extrabold flex flex-wrap'>
-                    hello
+                  <Button onClick={() => signIn()} className=''>Login</Button>
                 </h1>
-                <p className='text-lg mb-7 text-black'> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+                <p className='text-lg mb-7 text-black'> Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
                     scrambled it to make a type specimen book.</p>
             </div>
             {/* Right Side */}

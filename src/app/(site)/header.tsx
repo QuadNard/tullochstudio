@@ -5,8 +5,9 @@ import Image from 'next/image';
 
 
 
-const Header =  () => {
 
+const Header =  () => {
+   
 
 return (
     <header className='h-full  px-4 text-black flex flex-col app__navbar'>

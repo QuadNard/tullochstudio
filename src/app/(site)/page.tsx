@@ -11,7 +11,11 @@ export const metadata = {
     description: 'The home page',
 }
 
-export default function HomePage() {
+export default  function HomePage() {
+    
+
+
+    
     console.log('Server');
     return (
         <div className='flex h-full flex-col items-center justify-center'>
@@ -30,11 +34,13 @@ export default function HomePage() {
                         <ProfileCard />
                     </div>
                 </div>
-                
+                 
+     
             </section>
             <section id='writings' className='flex w-full max-h-full p-10 justify-center'>
                 <FadeUp>
                     <Docs />
+            
                 </FadeUp>
             </section>
             <section id='contact' className='flex w-full max-h-full p-10 justify-center '>

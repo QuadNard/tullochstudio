@@ -2,99 +2,100 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+    provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Account {
+    id                String  @id @default(cuid())
+    userId            String
+    type              String
+    provider          String
+    providerAccountId String
+    refresh_token     String? @db.Text
+    access_token      String? @db.Text
+    expires_at        Int?
+    token_type        String?
+    scope             String?
+    id_token          String? @db.Text
+    session_state     String?
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    @@unique([provider, providerAccountId])
+}
+
+model Session {
+    id           String   @id @default(cuid())
+    sessionToken String   @unique
+    userId       String
+    expires      DateTime
+    user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
-  id                    String         @id @default(uuid())
-  email                 String         @unique @db.VarChar(255)
-  username              String         @unique @db.VarChar(100)
-  github_id             String         @unique @db.VarChar(100)
-  is_admin              Boolean        @default(false)
-  is_active             Boolean        @default(true)
-  created_at            DateTime       @default(now())
-  updated_at            DateTime       @default(now())
-  posts                 Post[]
-  comments              Comment[]
-  likes                 Like[]
-  notifications         Notification[] @relation(name: "myNotifications")
-  related_notifications Notification[] @relation(name: "relatedNotifications")
+    id            String    @id @default(cuid())
+    name          String?
+    email         String?   @unique
+    emailVerified DateTime?
+    image         String?
+    is_admin      Boolean   @default(false)
+    is_active     Boolean   @default(true)
+    posts         Post[]
+    comments      Comment[]
+    likes         Like[]
+    accounts      Account[]
+    sessions      Session[]
+}
+
+model VerificationToken {
+    identifier String
+    token      String   @unique
+    expires    DateTime
+
+    @@unique([identifier, token])
 }
 
 model Category {
-  id    String @id @default(uuid())
-  name  String @db.VarChar(20)
-  slug  String @db.VarChar(30)
-  posts Post[]
+    id    String @id @default(uuid())
+    name  String @db.VarChar(20)
+    slug  String @db.VarChar(30)
+    posts Post[]
 }
 
 model Post {
-  id                String     @id @default(uuid())
-  title             String     @db.VarChar(128)
-  short_description String     @db.VarChar(256)
-  author            User       @relation(fields: [author_id], references: [id], onDelete: Cascade)
-  author_id         String
-  content           String     @db.Text
-  visibility        Visibility @default(PUBLIC)
-  Category          Category   @relation(fields: [category_id], references: [id], onDelete: Cascade)
-  category_id       String
-  comments          Comment[]
-  likes             Like[]
-  created_at        DateTime   @default(now())
-  updated_at        DateTime   @default(now())
-}
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
 
-model Comment {
-  id         String   @id @default(uuid())
-  author     User     @relation(fields: [author_id], references: [id], onDelete: Cascade)
-  author_id  String
-  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
-  post_id    String
-  content    String
-  created_at DateTime @default(now())
-  updated_at DateTime @default(now())
-  approved   Boolean  @default(true)
+    updatedAt   DateTime  @updatedAt
+    content     String    @db.Text
+    published   Boolean   @default(false)
+    user        User      @relation(fields: [userId], references: [id])
+    userId      String
+    comments    Comment[]
+    likes       Like[]
+    Category    Category  @relation(fields: [category_id], references: [id], onDelete: Cascade)
+    category_id String
 }
 
 model Like {
-  id         String   @id @default(uuid())
-  user       User     @relation(fields: [user_id], references: [id])
-  user_id    String
-  post       Post     @relation(fields: [post_id], references: [id], onDelete: Cascade)
-  post_id    String
-  created_at DateTime @default(now())
+    id     String @id @default(cuid())
+    postId String
+    userId String
+    post   Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+    user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model Notification {
-  id         String             @id @default(uuid())
-  type       NotificationType
-  status     NotificationStatus @default(UNREAD)
-  from       User               @relation(name: "relatedNotifications", fields: [from_id], references: [id], onDelete: Cascade)
-  from_id    String
-  to         User               @relation(name: "myNotifications", fields: [to_id], references: [id], onDelete: Cascade)
-  to_id      String
-  post_id    String?
-  created_at DateTime           @default(now())
-}
-
-enum Visibility {
-  PUBLIC
-  PRIVATE
-  UNLISTED
-}
-
-enum NotificationType {
-  LIKE
-  COMMENT
-  FOLLOW
-}
-
-enum NotificationStatus {
-  READ
-  UNREAD
+model Comment {
+    id        String   @id @default(cuid())
+    post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+    user      User     @relation(fields: [userId], references: [id])
+    content   String
+    postId    String
+    userId    String
+    createdAt DateTime @default(now())
 }
