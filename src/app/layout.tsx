@@ -6,6 +6,8 @@ import ProvidersWrapper from '@/components/clients/Providers'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
+import ClientProvider from '@/components/clients/ClientQuery'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +24,13 @@ export default function RootLayout({
 
   return (
     <html lang="en" className='antialiased'>
+      <ClientProvider>
         <body>
             <ProvidersWrapper>
                 {children}
             </ProvidersWrapper>
         </body>
+      </ClientProvider>
     </html>
   )
 }

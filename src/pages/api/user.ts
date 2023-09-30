@@ -15,6 +15,6 @@ export default async function handler(
     id: user?.id,
     email: user?.email,
     image: user?.image,
-    is_admin: user?.is_admin || false,
+    role: user?.role || "USER",
   });
 }

@@ -5,38 +5,15 @@ import { gsap } from 'gsap';
 import { useSession, signIn } from "next-auth/react";
 import { Button } from '@/components/ui/Button';
 
-const sections = [
-    {
-        title: 'Introduction',
-        color: '#DCF018'
-    },
-       {
-        title: 'Los Angeles',
-        color: '#18F0E8'
-    },
-       {
-        title: 'Sanfrancisco',
-        color: '#8C0CF0'
-    },
-       {
-        title: 'Los Angeles',
-        color: '#F01830'
-    },
-       {
-        title: 'Los Angeles',
-        color: '#F0BA18'
-    },
-]
 
-
-
-export default function Docs() {
-      const { data: session } = useSession();
+export default function Docs({ category }: { category: any}) { 
+  const { data: session } = useSession();
   const { user } = session || {};
    console.log(user)
   
+
       const manageMouseEnter = (e: any, index: any) => {
-    gsap.to(e.target, {top: "-2vw", backgroundColor: sections[index].color, duration: 0.3})
+    gsap.to(e.target, {top: "-2vw", backgroundColor: category[index]?.color, duration: 0.3})
   }
 
   const manageMouseLeave = (e:any, index: any) => {
@@ -65,9 +42,9 @@ export default function Docs() {
         <div className='relative w-full'>
               <h3 className="uppercase font-semibold text-3xl">👜 Categories</h3>
             {
-              sections.map( (section, index) => {
+              category.map( (categories: any, index: any) => {
                 return <div className='border-t border-black  cursor-pointer relative mb-[calc(-2vw)] bg-transparent' onMouseEnter={(e) => {manageMouseEnter(e, index)}} onMouseLeave={(e) => {manageMouseLeave(e, index)}} key={index}>
-                  <p className='m-0 text-[5vw] pl-10 uppercase pointer-events-none'>{section.title}</p>
+                  <p className='m-0 text-[5vw] pl-10 uppercase pointer-events-none'>{categories.name}</p>
                 </div>
               })
             }

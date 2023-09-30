@@ -37,14 +37,19 @@ model Session {
     user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
+enum Role {
+    USER
+    ADMIN
+}
+
 model User {
     id            String    @id @default(cuid())
     name          String?
+    role          Role      @default(USER)
     email         String?   @unique
     emailVerified DateTime?
     image         String?
     is_admin      Boolean   @default(false)
-    is_active     Boolean   @default(true)
     posts         Post[]
     comments      Comment[]
     likes         Like[]
@@ -63,23 +68,27 @@ model VerificationToken {
 model Category {
     id    String @id @default(uuid())
     name  String @db.VarChar(20)
+    color String @db.VarChar(20)
     slug  String @db.VarChar(30)
     posts Post[]
 }
 
 model Post {
-    id        String   @id @default(cuid())
-    createdAt DateTime @default(now())
-
-    updatedAt   DateTime  @updatedAt
-    content     String    @db.Text
-    published   Boolean   @default(false)
-    user        User      @relation(fields: [userId], references: [id])
-    userId      String
-    comments    Comment[]
-    likes       Like[]
-    Category    Category  @relation(fields: [category_id], references: [id], onDelete: Cascade)
-    category_id String
+    id           String    @id @default(cuid())
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+    publishedAt  DateTime?
+    author       User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+    slug         String    @unique
+    title        String    @db.VarChar(280)
+    text         String    @db.Text
+    excerpt      String    @db.VarChar(280)
+    featureImage String?
+    comments     Comment[]
+    likes        Like[]
+    Category     Category  @relation(fields: [category_id], references: [id], onDelete: Cascade)
+    category_id  String
+    userId       String
 }
 
 model Like {
@@ -92,10 +101,12 @@ model Like {
 
 model Comment {
     id        String   @id @default(cuid())
-    post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
-    user      User     @relation(fields: [userId], references: [id])
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    text      String   @db.Text
+    post      Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
+    author    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
     content   String
     postId    String
     userId    String
-    createdAt DateTime @default(now())
 }

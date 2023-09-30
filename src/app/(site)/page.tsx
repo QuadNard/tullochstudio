@@ -11,12 +11,25 @@ export const metadata = {
     description: 'The home page',
 }
 
-export default  function HomePage() {
-    
+async function getCategories() {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getCategories`, 
+    {
+        headers: {
+            'Cache-Control': 'no-cache',
+        }
+    })
+   
+    if(!res.ok) {
+        console.log(res)
+    }
+    return res.json()
+}
 
 
+export default async function HomePage() {
+    const categories = await getCategories()
+   
     
-    console.log('Server');
     return (
         <div className='flex h-full flex-col items-center justify-center'>
             <section id='home' className='flex w-full max-h-full p-10 justify-center '>
@@ -34,19 +47,16 @@ export default  function HomePage() {
                         <ProfileCard />
                     </div>
                 </div>
-                 
-     
             </section>
             <section id='writings' className='flex w-full max-h-full p-10 justify-center'>
                 <FadeUp>
-                    <Docs />
-            
+                    <Docs category={categories} />
                 </FadeUp>
             </section>
             <section id='contact' className='flex w-full max-h-full p-10 justify-center '>
                 <FadeUp>
                     <h1 className="pt-12 text-5xl">CONTACT</h1>
-                      <Contact />
+                    <Contact />
                 </FadeUp>
             </section>
         </div>

@@ -26,7 +26,7 @@ callbacks: {
       }
       const userData = await fetch(`${process.env.NEXTAUTH_URL}/api/user?userId=${user.id}`).then(response => response.json());
       session.user.subscriptionStatus = userData.subscriptionStatus;
-      session.user.is_admin = userData.is_admin;
+      session.user.is_admin = userData.role;
       return session;
     },
   },
