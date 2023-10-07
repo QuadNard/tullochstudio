@@ -1,4 +1,7 @@
 
+
+
+
 export const metadata = {
     title: 'Writings',
     description: 'Writing posts',
@@ -6,14 +9,12 @@ export const metadata = {
 
 
 
-
-
-
-
 export default function Writings() {
     return (
-        <div>
-            <h1>Writings page</h1>
+        <div className='min-h-screen'>
+            <div className="bg-bg-[url('/noise.png')] overflow-x-hidden inset-0 mix-blend-hard-light pointer">
+        
+            </div>
         </div>
     )
 }

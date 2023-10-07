@@ -2,6 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 0.6em;
+    height: 0.6em;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    /* Replace with the desired track color */
+}
+
+/* Thumb style */
+::-webkit-scrollbar-thumb {
+    border-radius: 0.6em;
+    background: #ccc;
+    /* Replace with the desired thumb color */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ddd;
+    /* Replace with the desired hover color */
+}
+
+/* Thumb active style */
+::-webkit-scrollbar-thumb:active {
+    background: #aaa;
+    /* Replace with the desired active color */
+}
+
+
+
 
 
 .pageWrapper {
