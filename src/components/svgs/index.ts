@@ -1,0 +1,21 @@
+export { default as AWS } from './aws.svg';
+export { default as CSS } from './css.svg';
+export { default as Docker } from './docker.svg';
+export { default as Framer } from './framer.svg';
+export { default as Github } from './github.svg';
+export { default as HTML5 } from './html5.svg';
+export { default as Javascript } from './javascript.svg';
+export { default as Jest } from './jest.svg';
+export { default as LinkedIn } from './linkedin.svg';
+export { default as MongoDB } from './mongodb.svg';
+export { default as NextJS } from './nextjs.svg';
+export { default as PostGreSQL } from './postgresql.svg';
+export { default as ReactQuery } from './reactquery.svg';
+export { default as SupaBase } from './supabase.svg';
+export { default as TailwindCSS } from './tailwindcss.svg';
+export { default as Twitter } from './twitter.svg';
+export { default as Typescript } from './typescript.svg';
+export { default as ViteJS } from './vitejs.svg';
+export { default as ViTest } from './vitest.svg';
+
+
