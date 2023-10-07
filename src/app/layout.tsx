@@ -24,7 +24,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className='antialiased'>
-      <ClientProvider>
+     <ClientProvider>
         <body>
             <ProvidersWrapper>
                 {children}

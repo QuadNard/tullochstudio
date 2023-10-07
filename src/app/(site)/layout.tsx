@@ -1,6 +1,4 @@
 
-import Footer from './footer';
-import Header from './header';
 
 
 
@@ -10,17 +8,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
 return (
-    <section className='overflow-x-hidden'>
-      <div className='flex min-h-screen flex-col'>  
-          <div  id='bkg' className='bg-default-bkg h-screen dark:bg-black'>
-            <div className='text-regal-purple bg-default-bkg bg-gradient-blue dark:bg-gradient-gotham antialiased'>
-            <main>
-              <Header />
-              {children}
-              <Footer />
-              </main>
-            </div>
-        </div>
+    <section className='text-default-color-gray min-h-screen'>
+      <div className="bg-[url('/noise.png')] overflow-x-hidden inset-0 mix-blend-hard-light pointer dark:hidden">
+        {children}
       </div>
     </section>
   );

@@ -9,6 +9,7 @@ import { FormPost } from '@/components/clients/Form';
 
 
 
+
 export default  function Dashboard() {
      const { data: session, status } = useSession();
      const router = useRouter();
@@ -39,6 +40,7 @@ export default  function Dashboard() {
                         initial={{ scale: 0}}
                         animate={{ scale: 1}}
                         transition={{ type: "tween", duration: 1}}
+                        className='py-24'
                     >
                       <FormPost />
                     </motion.div>

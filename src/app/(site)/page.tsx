@@ -1,8 +1,12 @@
-import { InfoCard, ProfileCard, ProjectCard, StatsCard }  from '@/components/clients/Cards';
-import Docs from '@/components/clients/Docs';
-import  FadeUp  from '@/components/ui/FadeUp';
-import BannerIntro from '@/components/ui/Banner';
-import Contact from '@/components/clients/Contact';
+
+
+import Header from '@/components/layout/header';
+import IntroPage from '@/components/pages/intro';
+import ProjectPage from '@/components/pages/projects';
+import DocsPage from '@/components/pages/documents';
+import ContactPage from '@/components/pages/contact';
+import Footer from '@/components/layout/footer';
+
 
 
 
@@ -24,41 +28,31 @@ async function getCategories() {
     }
     return res.json()
 }
-
+ 
+ 
 
 export default async function HomePage() {
     const categories = await getCategories()
    
     
     return (
-        <div className='flex h-full flex-col items-center justify-center'>
-            <section id='home' className='flex w-full max-h-full p-10 justify-center '>
-                <BannerIntro />
-            </section>
-            <section id='projects' className='flex w-full max-h-full p-10 justify-center mt-8'>
-                <div className='flex flex-col'>
-                    <FadeUp> 
-                    <h1 className="text-5xl flex flex-col items-center pt-14">Projects</h1>
-                    </FadeUp>
-                    <div className='mt-10 grid gap-4 text-left md:mt-20 md:grid-cols-6 md:gap-6'>
-                        <InfoCard />
-                        <StatsCard />
-                        <ProjectCard />
-                        <ProfileCard />
-                    </div>
-                </div>
-            </section>
-            <section id='writings' className='flex w-full max-h-full p-10 justify-center'>
-                <FadeUp>
-                    <Docs category={categories} />
-                </FadeUp>
-            </section>
-            <section id='contact' className='flex w-full max-h-full p-10 justify-center '>
-                <FadeUp>
-                    <h1 className="pt-12 text-5xl">CONTACT</h1>
-                    <Contact />
-                </FadeUp>
-            </section>
+        <div id='pageWrapper' className='w-fit max-w-6xl gap-16 m-auto p-2 pb-80'>
+            <Header />
+           <div className='flex flex-col items-center justify-center'>
+                <section id='intro'>
+                    <IntroPage />
+                </section>
+                <section className=''>
+                    <ProjectPage />
+                </section>
+                <section className=''>
+                    <DocsPage />
+                </section>
+                <section className=''>
+                   <ContactPage />
+                </section>
+           </div>
+           <Footer />
         </div>
     )
 }
