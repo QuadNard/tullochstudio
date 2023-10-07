@@ -1,9 +1,10 @@
-import NextAuth from "next-auth";
+import NextAuth, { getServerSession } from "next-auth";
 import type { NextAuthOptions } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import prisma from "../../../lib/prisma";
+import  prisma  from "../../../lib/prisma";
+import { GetServerSidePropsContext } from 'next';
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -33,3 +34,10 @@ callbacks: {
 };
 
 export default NextAuth(authOptions);
+
+export const getServerAuthSession = (ctx: {
+  req: GetServerSidePropsContext['req'];
+  res: GetServerSidePropsContext['res'];
+}) => {
+  return getServerSession(ctx.req, ctx.res, authOptions)
+}
