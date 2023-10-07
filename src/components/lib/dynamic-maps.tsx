@@ -7,9 +7,9 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-location.png";
+import markerShadow from "../../../public/imgs/location.png";
 import relocationMarker from "leaflet/dist/images/marker-relocation.png";
-import workMarker from "leaflet/dist/images/marker-workplace.png";
+import workMarker from "../../../public/imgs/workplace.png";
 import { MapData } from '@/types/types';
 
 const homeIcon = L.icon({

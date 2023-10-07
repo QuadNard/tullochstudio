@@ -10,16 +10,7 @@ export type Info = {
 
 }
 
-export type Stats = {
-    title: string;
-    description: string;
-    status: string;
-    statusTwo: string;
-    statusThree: string;
-    subTitle: string;
-    subTitleTwo: string;
-    subTitleThree: string;
-}
+
 
 export type Project = {
     id: string;

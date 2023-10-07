@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Modal  from '../lib/modal';
 import dynamic from 'next/dynamic';
-import markerShadow from "leaflet/dist/images/marker-location.png";
-import relocationMarker from "leaflet/dist/images/marker-relocation.png";
-import workMarker from "leaflet/dist/images/marker-workplace.png";
+import markerShadow from "../../../public/imgs/location.png";
+import relocationMarker from "../../../public/imgs/relocation.png";
+import workMarker from "../../../public/imgs/workplace.png";
 import { motion } from 'framer-motion';
 import { BsArrowUpRight } from 'react-icons/bs';
 

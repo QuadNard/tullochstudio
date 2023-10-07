@@ -4,8 +4,8 @@ import LocalFonts from 'next/font/local';
 import { motion } from 'framer-motion';
 import { BsArrowUpRight } from 'react-icons/bs'
 import { gsap } from 'gsap';
-import { useSession, signIn  } from 'next-auth/react';
-import { api } from '@/utils/api';
+
+
 
 const titleFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-bold.woff2'})
 const subFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.woff2'})
@@ -13,28 +13,23 @@ const subFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.wo
 
 
 const DocsPage = () => {
-     const { data: session } = useSession();
-  const { user } = session || {};
-  const categories = api.category.all.useQuery();
-  console.log(categories.data?.[0].name)
 
-
-   /* <Button onClick={() => signIn()} className=''>Login</Button> */
-
-       const manageMouseEnter = (e: any, index: any) => {
-    gsap.to(e.target, {top: "-2vw", backgroundColor: categories.data?.[index].color, duration: 0.3})
+/*  
+const manageMouseEnter = (e: any, index: any) => {
+    gsap.to(e.target, {top: "-2vw", backgroundColor:  ,duration: 0.3})
   }
 
   const manageMouseLeave = (e:any, index: any) => {
     gsap.to(e.target, {top: "0", backgroundColor: "transparent", duration: 0.3, delay: 0.2})
   }
+*/
 
 
 
     return (
         <div className='pageWrapper'>
-            <div className='boxSection'>
-                        <div className='text-left md:text-right p-6'>
+                <div className='boxSection'>
+              <div className='text-left md:text-right p-6'>
                         <p className='text-sm pb-3 text-[#6f6f6f]'>
                     {new Intl.DateTimeFormat('en-US', {
                         year: 'numeric',
@@ -57,9 +52,7 @@ const DocsPage = () => {
                         </p>
                         <button className=' text-[#6f6f6f] pt-8'>
                             <div className='flex item-center gap-4 hover:text-blue-300'>
-                                <h1>
-                            
-                            </h1> 
+                                <h1>Login</h1>
                             <BsArrowUpRight />
                             </div>
                         </button>
@@ -67,13 +60,24 @@ const DocsPage = () => {
                 </div>
                 <div className='boxSectionTwo'>
                   <motion.div className='flex flex-col items-center justify-center'>
-                    {categories.data?.map((category, index) => (
+          
+                  </motion.div>
+                </div>
+        </div>
+    )
+} 
+
+export default DocsPage;
+
+/* 
+
+                    {categories.map((category, index) => (
                       <ul className='flex w-full justify-between items-center 
                       cursor-pointer border-t-2 border-black p-8 transition-all duration-300 
                       hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] 
                       active:translate-y-[0px] ' 
-                     
-                     onMouseEnter={(e) => {manageMouseEnter(e, index)}} onMouseLeave={(e) => {manageMouseLeave(e, index)}} key={index}
+                  
+                  onMouseEnter={(e) => {manageMouseEnter(e, index)}} onMouseLeave={(e) => {manageMouseLeave(e, index)}} key={index}
                       >
                         <li className='flex space-x-24'>
                           <p className='md:text-2xl'>
@@ -84,11 +88,6 @@ const DocsPage = () => {
                       </ul>
                     ))}
                       
-                  </motion.div>
-                </div>
-        </div>
-    )
-} 
 
-export default DocsPage;
 
+*/
