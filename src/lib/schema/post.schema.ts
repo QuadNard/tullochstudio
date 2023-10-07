@@ -1,19 +1,19 @@
 import z from "zod";
 
 export const PostSchema = z.object({
-  title: z.string().min(1, "Title must not be empty"),
-  text: z.string().min(1, "Text must not be empty"),
-  slug: z.string(),
-  category_id: z.string(),
-  userId: z.string(),
+  title: z.string(),
+  short_description: z.string().max(256),
+  text: z.string(),
+  author: z.string(),
+  category_id: z.string().uuid(),
 });
 
 export const PostUpdateSchema = z.object({
-  title: z.string().min(1, "Title must not be empty"),
-  text: z.string().min(1, "Text must not be empty"),
-  slug: z.string(),
-  category_id: z.string(),
-  userId: z.string(),
+  title: z.string(),
+  short_description: z.string().max(256),
+  content: z.string(),
+  category_id: z.string().uuid(),
+  post_id: z.string().uuid(),
 });
 
 export type PostInput = z.TypeOf<typeof PostSchema>;

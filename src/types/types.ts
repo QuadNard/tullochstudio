@@ -33,3 +33,11 @@ export type Profile = {
     name: string;
     title: string;
 }
+
+export type MapData = {
+    id: number;
+    name: string;
+    lgt?: number[];
+    popUp?: string;
+    markerIcon?: any;
+}
