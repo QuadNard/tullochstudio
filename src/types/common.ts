@@ -13,6 +13,7 @@ export type Children =
 export interface PostFormData {
   title: string;
   description: string;
+  content: string; 
   category: string;
 }
 

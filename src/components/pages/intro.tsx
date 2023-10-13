@@ -4,6 +4,7 @@ import LocalFonts from 'next/font/local';
 import { motion } from 'framer-motion';
 import { BsArrowUpRight } from 'react-icons/bs'
 import { IntroBoxAnimation } from '../lib/box-animation';
+import { useSession } from "next-auth/react"
 
 const TimeFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.woff2'})
 
@@ -12,8 +13,8 @@ const TimeFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.w
 
 
 const IntroPage = () => {
-    
-    
+      const { data: session } = useSession()
+        console.log(session)
    
 
     return (

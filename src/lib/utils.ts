@@ -1,3 +1,6 @@
+
+
+
 export function formatDate(input: string | number): string {
     const date = new Date(input)
     return date.toLocaleString("en-US", {
@@ -8,3 +11,4 @@ export function formatDate(input: string | number): string {
       minute: "numeric",
     })
   }
+

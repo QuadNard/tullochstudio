@@ -10,6 +10,8 @@ import Footer from '@/components/layout/footer';
 
 
 
+
+
 export const metadata = {
     title: 'Home',
     description: 'The home page',
@@ -33,7 +35,7 @@ async function getCategories() {
 
 export default async function HomePage() {
     const categories = await getCategories()
-   
+
     
     return (
         <div id='pageWrapper' className='w-fit max-w-6xl gap-16 m-auto p-2 pb-80'>
@@ -49,7 +51,7 @@ export default async function HomePage() {
                     <DocsPage />
                 </section>
                 <section className=''>
-                   <ContactPage />
+                <ContactPage />
                 </section>
            </div>
            <Footer />

@@ -4,6 +4,15 @@ import LocalFonts from 'next/font/local';
 import { motion } from 'framer-motion';
 import { BsArrowUpRight } from 'react-icons/bs'
 import { gsap } from 'gsap';
+import { useQuery } from '@tanstack/react-query';
+import axios from 'axios';
+import Link from 'next/link';
+
+interface CategoryProps {
+    name: string;
+    slug: string;
+    id: string;
+}
 
 
 
@@ -14,15 +23,25 @@ const subFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.wo
 
 const DocsPage = () => {
 
-/*  
+ 
 const manageMouseEnter = (e: any, index: any) => {
-    gsap.to(e.target, {top: "-2vw", backgroundColor:  ,duration: 0.3})
+    gsap.to(e.target, {top: "-2vw", backgroundColor: category?.[index].color  ,duration: 0.3})
   }
 
-  const manageMouseLeave = (e:any, index: any) => {
+  const manageMouseLeave = (e:any) => {
     gsap.to(e.target, {top: "0", backgroundColor: "transparent", duration: 0.3, delay: 0.2})
   }
-*/
+
+
+
+ const { data: category } = useQuery({
+        queryKey: ['categories'],
+        queryFn:  async () => {
+            const res = await axios.get('/api/categories');
+            return res.data;
+        }
+    });
+    
 
 
 
@@ -60,7 +79,25 @@ const manageMouseEnter = (e: any, index: any) => {
                 </div>
                 <div className='boxSectionTwo'>
                   <motion.div className='flex flex-col items-center justify-center'>
-          
+                    {category?.map((categories: CategoryProps, idx: number ) => (
+                      <Link href={`/writings/${categories.id}`}>
+                        <ul className='flex w-full justify-between items-center 
+                      cursor-pointer border-t-2 border-black p-8 transition-all duration-300 
+                      hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] 
+                      active:translate-y-[0px]' 
+                      onMouseEnter={(e) => {manageMouseEnter(e, idx)}} onMouseLeave={(e) => {manageMouseLeave(e)}} 
+                      key={idx}>
+                        <li className='flex space-x-24'>
+                          
+                          <p className='md:text-2xl'>
+                              {categories.name}
+                          </p>
+                          
+                          <span className='text-xs'>Design & Development</span>
+                        </li>
+                      </ul>
+                      </Link>
+                    ))}
                   </motion.div>
                 </div>
         </div>

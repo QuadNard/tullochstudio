@@ -1,4 +1,4 @@
-import { Navigation, Info, Stats, Project, Profile, MapData } from '@/types/types';
+import { Navigation, Info,  Project, Profile, MapData } from '@/types/types';
 import { Laptop } from "lucide-react";
 
 export const navigations: Navigation[] = [
@@ -12,18 +12,7 @@ export const info: Info[] = [
     { title: ' Global low latency', description: ' Data is replicated to 8+ regions all over the world for the best latency for your users. Add/remove regions without downtime.'}
 ];
 
-export const stats: Stats[] = [
-    {
-    title: 'Gobal' , 
-    description: 'Data is replicated to 8+ regions all over the world for the best latency for your users. Add/remove regions without downtime.', 
-    status: '12,000', 
-    statusTwo: '12,0004', 
-    statusThree: '12,00', 
-    subTitle: 'Regions', 
-    subTitleTwo: 'Edge', 
-    subTitleThree: 'Requests' 
-}
-]
+
 
 export const PROJECT_LIST = [
     {

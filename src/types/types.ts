@@ -10,7 +10,15 @@ export type Info = {
 
 }
 
+export type Option = {
+    label: React.ReactNode;
+    value: string | number | string[];
+}
 
+export type SelectProps = React.DetailedHTMLProps<React.SelectHTMLAttributes<HTMLSelectElement>,
+HTMLSelectElement> & {
+    options: Option[];
+}
 
 export type Project = {
     id: string;
