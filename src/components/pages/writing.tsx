@@ -27,7 +27,7 @@ interface PreviewPostProps {
   content: string
 }
 
-export const revalidate = 0
+
 
 export default function WritingPage() {
   const perimeter = useParams()
@@ -44,7 +44,7 @@ export default function WritingPage() {
     (post: any) => post.category_id === perimeter.id
   )
 
-  console.log(filtered)
+
   let [scrollContainerRef, setScrollContainerRef] = React.useState(null)
 
   return (
