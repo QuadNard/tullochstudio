@@ -38,7 +38,7 @@ export default async function HomePage() {
 
     
     return (
-        <div id='pageWrapper' className='w-fit max-w-6xl gap-16 m-auto p-2 pb-80'>
+        <div id='pageWrapper' className='w-fit max-w-6xl gap-16 m-auto p-2 pb-30'>
             <Header />
            <div className='flex flex-col items-center justify-center'>
                 <section id='intro'>

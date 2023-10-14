@@ -13,8 +13,8 @@ const TimeFont = LocalFonts({ src: '../../fonts/subFont/new-york-small-regular.w
 
 
 const IntroPage = () => {
-      const { data: session } = useSession()
-        console.log(session)
+   
+        
    
 
     return (

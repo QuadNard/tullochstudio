@@ -78,9 +78,10 @@ const manageMouseEnter = (e: any, index: any) => {
                     </div>
                 </div>
                 <div className='boxSectionTwo'>
+                 <h1 className='p-1 text-2xl font-bold'>👜 CATEGORIES</h1>
                   <motion.div className='flex flex-col items-center justify-center'>
                     {category?.map((categories: CategoryProps, idx: number ) => (
-                      <Link href={`/writings/${categories.id}`}>
+                      <Link href={`/writings/${categories.id}`} key={idx}>
                         <ul className='flex w-full justify-between items-center 
                       cursor-pointer border-t-2 border-black p-8 transition-all duration-300 
                       hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] 
@@ -106,25 +107,3 @@ const manageMouseEnter = (e: any, index: any) => {
 
 export default DocsPage;
 
-/* 
-
-                    {categories.map((category, index) => (
-                      <ul className='flex w-full justify-between items-center 
-                      cursor-pointer border-t-2 border-black p-8 transition-all duration-300 
-                      hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] 
-                      active:translate-y-[0px] ' 
-                  
-                  onMouseEnter={(e) => {manageMouseEnter(e, index)}} onMouseLeave={(e) => {manageMouseLeave(e, index)}} key={index}
-                      >
-                        <li className='flex space-x-24'>
-                          <p className='md:text-2xl'>
-                            {category.name}
-                          </p>
-                          <span className='text-xs'>Design & Development</span>
-                        </li>
-                      </ul>
-                    ))}
-                      
-
-
-*/
