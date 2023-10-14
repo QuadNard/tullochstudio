@@ -11,21 +11,9 @@ export const metadata = {
   description: "The home page",
 }
 
-async function getCategories() {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/getCategories`, {
-    headers: {
-      "Cache-Control": "no-cache",
-    },
-  })
 
-  if (!res.ok) {
-    console.log(res)
-  }
-  return res.json()
-}
 
 export default async function HomePage() {
-  const categories = await getCategories()
 
   return (
     <div id="pageWrapper" className="w-fit max-w-6xl gap-16 m-auto p-2 pb-30">
