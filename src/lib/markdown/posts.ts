@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { compileMDX } from 'next-mdx-remote/rsc'
+import { compileMDX } from "next-mdx-remote/rsc"
 
 const rootDirectory = path.join(process.cwd(), "content")
 type PostMeta = {
@@ -14,7 +14,6 @@ type Post = {
   meta: PostMeta
   content: any
 }
-
 
 export async function getPostBySlug(slug: string): Promise<Post> {
   const realSlug = slug.replace(/\.mdx$/, "")

@@ -1,13 +1,12 @@
-
-import * as React from 'react'
-import TitleBar from './title-bar';
-import { Compass } from 'lucide-react';
-import Button from '../lib/button';
-import { FaBeer } from 'react-icons/fa';
-import Link from 'next/link';
+import * as React from "react"
+import TitleBar from "./title-bar"
+import { Compass } from "lucide-react"
+import Button from "../lib/button"
+import { FaBeer } from "react-icons/fa"
+import Link from "next/link"
 
 interface DetailContainerProps {
-    children: React.ReactNode;
+  children: React.ReactNode
 }
 
 interface TitleProps {
@@ -24,16 +23,19 @@ const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   )
 })
 
-type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
+type HeaderProps = React.HTMLAttributes<HTMLDivElement>
 
 function Header(props: HeaderProps) {
   return <div className="space-y-3" {...props} />
 }
 
 function ContentContainer(props: React.HTMLAttributes<HTMLDivElement>) {
-    return (
-        <div className='mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8' {...props}  />
-    )
+  return (
+    <div
+      className="mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
+      {...props}
+    />
+  )
 }
 
 const Container = React.forwardRef<HTMLDivElement, DetailContainerProps>(
@@ -64,14 +66,20 @@ function Null() {
             any case, there’s nothing to see here...
           </p>
         </div>
-        <Link href='/'>
-        <Button icon={<FaBeer width={12} height={12} color={'#000'} />}  label='hello' className='default' size='default' raduis='sm' variant='primary'  />
+        <Link href="/">
+          <Button
+            icon={<FaBeer width={12} height={12} color={"#000"} />}
+            label="hello"
+            className="default"
+            size="default"
+            raduis="sm"
+            variant="primary"
+          />
         </Link>
       </div>
     </Container>
   )
 }
-
 
 export const Detail = {
   Container,

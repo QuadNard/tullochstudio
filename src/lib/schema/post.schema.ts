@@ -1,4 +1,4 @@
-import z from "zod";
+import z from "zod"
 
 export const PostSchema = z.object({
   title: z.string(),
@@ -6,7 +6,7 @@ export const PostSchema = z.object({
   text: z.string(),
   author: z.string(),
   category_id: z.string().uuid(),
-});
+})
 
 export const PostUpdateSchema = z.object({
   title: z.string(),
@@ -14,7 +14,7 @@ export const PostUpdateSchema = z.object({
   content: z.string(),
   category_id: z.string().uuid(),
   post_id: z.string().uuid(),
-});
+})
 
-export type PostInput = z.TypeOf<typeof PostSchema>;
-export type PostUpdateInput = z.TypeOf<typeof PostUpdateSchema>;
+export type PostInput = z.TypeOf<typeof PostSchema>
+export type PostUpdateInput = z.TypeOf<typeof PostUpdateSchema>

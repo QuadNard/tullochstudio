@@ -1,27 +1,37 @@
-'use client'
+"use client"
 
-import { createContext, useContext, useState, Dispatch, SetStateAction } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  Dispatch,
+  SetStateAction,
+} from "react"
 
 interface ActiveIdContextType {
-    activeId: null | number;
-    setActiveId: Dispatch<SetStateAction<null | number>>;
+  activeId: null | number
+  setActiveId: Dispatch<SetStateAction<null | number>>
 }
 
 const ActiveIdContext = createContext<ActiveIdContextType>({
-    activeId: null,
-    setActiveId: () => {},
-});
+  activeId: null,
+  setActiveId: () => {},
+})
 
-export const ActiveIdProvider = ({ children }: { children: React.ReactNode }) => {
-    const [activeId, setActiveId] = useState<null | number>(0); // Provide an initial value (e.g., null)
+export const ActiveIdProvider = ({
+  children,
+}: {
+  children: React.ReactNode
+}) => {
+  const [activeId, setActiveId] = useState<null | number>(0) // Provide an initial value (e.g., null)
 
-    return (
-        <ActiveIdContext.Provider value={{ activeId, setActiveId }}>
-            {children}
-        </ActiveIdContext.Provider>
-    );
-};
+  return (
+    <ActiveIdContext.Provider value={{ activeId, setActiveId }}>
+      {children}
+    </ActiveIdContext.Provider>
+  )
+}
 
 export function useActiveId() {
-    return useContext(ActiveIdContext);
+  return useContext(ActiveIdContext)
 }

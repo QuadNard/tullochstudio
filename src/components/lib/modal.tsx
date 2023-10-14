@@ -1,21 +1,19 @@
-'use client';
+"use client"
 
-
-import React, { useCallback, useEffect, useState } from 'react';
-import { IoMdClose } from 'react-icons/io';
-import  Button  from './button';
-import Link from 'next/link';
-
+import React, { useCallback, useEffect, useState } from "react"
+import { IoMdClose } from "react-icons/io"
+import Button from "./button"
+import Link from "next/link"
 
 type Props = {
-  isOpen?: boolean;
-  title?: string;
-  body?: React.ReactElement;
-  footer?: React.ReactElement;
-  actionLabel: string;
-  disabled?: boolean;
-  onClose?: () => void;
-};
+  isOpen?: boolean
+  title?: string
+  body?: React.ReactElement
+  footer?: React.ReactElement
+  actionLabel: string
+  disabled?: boolean
+  onClose?: () => void
+}
 
 function Modal({
   isOpen,
@@ -26,20 +24,16 @@ function Modal({
   onClose,
   disabled,
 }: Props) {
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(isOpen)
 
   useEffect(() => {
-    setShowModal(isOpen);
-  }, [isOpen, onClose]);
+    setShowModal(isOpen)
+  }, [isOpen, onClose])
 
   const handleClose = useCallback(() => {
-    setShowModal(false);
-    setTimeout(() => {
-    }, 300);
-  }, [disabled]);
-
-
-
+    setShowModal(false)
+    setTimeout(() => {}, 300)
+  }, [disabled])
 
   return (
     <>
@@ -63,18 +57,18 @@ function Modal({
               <div className="relative p-6 flex-auto">{body}</div>
               <div className="flex flex-col gap-2 p-6">
                 <div className="flex flex-col items-center gap-4 w-full">
-                  <Link href='https://www.joshwcomeau.com/css/designing-shadows/' className='w-full'>
-                    <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                  />
+                  <Link
+                    href="https://www.joshwcomeau.com/css/designing-shadows/"
+                    className="w-full"
+                  >
+                    <Button disabled={disabled} label={actionLabel} />
                   </Link>
-                  <Link href='https://www.joshwcomeau.com/css/designing-shadows/' className='w-full'>
-                    <Button
-                    disabled={disabled}
-                    label={actionLabel}
-                  />
-                  </Link>              
+                  <Link
+                    href="https://www.joshwcomeau.com/css/designing-shadows/"
+                    className="w-full"
+                  >
+                    <Button disabled={disabled} label={actionLabel} />
+                  </Link>
                 </div>
                 {footer}
               </div>
@@ -83,7 +77,7 @@ function Modal({
         </div>
       </div>
     </>
-  );
+  )
 }
 
-export default Modal;
+export default Modal

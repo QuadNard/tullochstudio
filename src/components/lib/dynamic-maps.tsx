@@ -1,57 +1,47 @@
-"use client";
+"use client"
 
-
-import L from "leaflet";
-import React from "react";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import 'leaflet/dist/leaflet.css';
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "../../../public/imgs/location.png";
-import relocationMarker from "leaflet/dist/images/marker-relocation.png";
-import workMarker from "../../../public/imgs/workplace.png";
-import { MapData } from '@/types/types';
+import L from "leaflet"
+import React from "react"
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
+import "leaflet/dist/leaflet.css"
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png"
+import markerIcon from "leaflet/dist/images/marker-icon.png"
+import markerShadow from "../../../public/imgs/location.png"
+import relocationMarker from "leaflet/dist/images/marker-relocation.png"
+import workMarker from "../../../public/imgs/workplace.png"
+import { MapData } from "@/types/types"
 
 const homeIcon = L.icon({
   iconUrl: markerShadow.src,
   iconSize: [35, 35],
-});
+})
 
-const relocationIcon = L.icon({
-  iconUrl: relocationMarker.src,
-  iconSize: [35, 35],
-});
+
 
 const workIcon = L.icon({
   iconUrl: workMarker.src,
   iconSize: [35, 35],
-});
-
+})
 
 export const mapData: MapData[] = [
-    {
-        id: 1,
-        name: 'Washington D.C',
-        lgt: [27.664827, -81.515754],
-        popUp: 'this is dc',
-        markerIcon: homeIcon,
-    },
-     {
-        id: 2,
-        name: 'New York',
-        lgt:[	40.730610, -73.935242],
-        popUp: 'this is nyc',
-        markerIcon: workIcon,
-    },
-];
-
-
-
-
-
+  {
+    id: 1,
+    name: "Washington D.C",
+    lgt: [27.664827, -81.515754],
+    popUp: "this is dc",
+    markerIcon: homeIcon,
+  },
+  {
+    id: 2,
+    name: "New York",
+    lgt: [40.73061, -73.935242],
+    popUp: "this is nyc",
+    markerIcon: workIcon,
+  },
+]
 
 // @ts-ignore
-delete L.Icon.Default.prototype._getIconUrl;
+delete L.Icon.Default.prototype._getIconUrl
 L.Icon.Default.mergeOptions({
   iconUrl: markerIcon.src,
   iconRetinaUrl: markerIcon2x.src,
@@ -59,19 +49,13 @@ L.Icon.Default.mergeOptions({
   workMarker: workMarker.src,
   relocationMarker: relocationMarker.src,
   iconSize: [25, 25],
-});
-
-
+})
 
 type Props = {
-  center?: number[],
-};
+  center?: number[]
+}
 
-function Map({ center}: Props) {
-  
-
-
-
+function Map({ center }: Props) {
   return (
     <MapContainer
       center={(center as L.LatLngExpression) || [51, -0.09]}
@@ -82,20 +66,20 @@ function Map({ center}: Props) {
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />   
-    <>
-      {mapData.map((data) => (
-        
-        <Marker position={data.lgt as L.LatLngExpression} key={data.id} icon={data.markerIcon}>
-          <Popup>
-              {data.popUp}
-          </Popup>
-        </Marker>
-      ))}
-    </>  
+      />
+      <>
+        {mapData.map((data) => (
+          <Marker
+            position={data.lgt as L.LatLngExpression}
+            key={data.id}
+            icon={data.markerIcon}
+          >
+            <Popup>{data.popUp}</Popup>
+          </Marker>
+        ))}
+      </>
     </MapContainer>
-  );
+  )
 }
 
-export default Map;
-
+export default Map

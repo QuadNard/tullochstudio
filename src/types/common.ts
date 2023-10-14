@@ -1,6 +1,5 @@
-
-import { ISODateString } from "next-auth";
-import React from "react";
+import { ISODateString } from "next-auth"
+import React from "react"
 
 export type Children =
   | string
@@ -9,11 +8,10 @@ export type Children =
   | JSX.Element
   | JSX.Element[]
   | null
-  | undefined;
+  | undefined
 export interface PostFormData {
-  title: string;
-  description: string;
-  content: string; 
-  category: string;
+  title: string
+  description: string
+  content: string
+  category: string
 }
-
