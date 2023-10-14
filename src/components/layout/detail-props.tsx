@@ -13,7 +13,7 @@ interface TitleProps {
   children: React.ReactNode
 }
 
-const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
+export const Title = React.forwardRef<HTMLHeadingElement, TitleProps>((props, ref) => {
   return (
     <h1
       ref={ref}
@@ -38,7 +38,7 @@ function ContentContainer(props: React.HTMLAttributes<HTMLDivElement>) {
   )
 }
 
-const Container = React.forwardRef<HTMLDivElement, DetailContainerProps>(
+export const Container = React.forwardRef<HTMLDivElement, DetailContainerProps>(
   (props, ref) => {
     return (
       <div

@@ -4,6 +4,7 @@ import ProjectPage from "@/components/pages/projects"
 import DocsPage from "@/components/pages/documents"
 import ContactPage from "@/components/pages/contact"
 import Footer from "@/components/layout/footer"
+import { Suspense } from 'react'
 
 export const metadata = {
   title: "Home",
@@ -30,18 +31,26 @@ export default async function HomePage() {
     <div id="pageWrapper" className="w-fit max-w-6xl gap-16 m-auto p-2 pb-30">
       <Header />
       <div className="flex flex-col items-center justify-center">
-        <section id="intro">
+        <Suspense fallback={<p>Loading intro...</p>}>
+            <section id="intro">
           <IntroPage />
-        </section>
-        <section className="">
+          </section>
+        </Suspense>
+        <Suspense fallback={<p>Loading projects...</p>}>
+            <section  className="">
           <ProjectPage />
         </section>
-        <section className="">
-          <DocsPage />
-        </section>
-        <section className="">
-          <ContactPage />
-        </section>
+        </Suspense>
+          <Suspense fallback={<p>Loading documents...</p>}>
+            <section className="">
+              <DocsPage />
+            </section>
+          </Suspense>
+          <Suspense fallback={<p>Loading contact...</p>}>
+              <section className="">
+                <ContactPage />
+              </section>
+          </Suspense>
       </div>
       <Footer />
     </div>

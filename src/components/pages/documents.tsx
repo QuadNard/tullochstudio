@@ -58,7 +58,7 @@ const DocsPage = () => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className="text-5xl text-[#171717] leading-tight">
+          <span className="md:text-5xl text-2xl text-[#171717] leading-tight">
             The Power of Keys{" "}
             <motion.span
               animate={{

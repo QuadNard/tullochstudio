@@ -4,7 +4,7 @@ import LocalFonts from "next/font/local"
 import { motion } from "framer-motion"
 import { BsArrowUpRight } from "react-icons/bs"
 import { IntroBoxAnimation } from "../lib/box-animation"
-import { useSession } from "next-auth/react"
+
 
 const TimeFont = LocalFonts({
   src: "../../fonts/subFont/new-york-small-regular.woff2",
@@ -14,7 +14,7 @@ const IntroPage = () => {
   return (
     <div className="pageWrapper">
       <div className="boxSection">
-        <div className={` text-left md:text-right p-6 ${TimeFont.className}`}>
+        <div className={`text-left  md:text-right p-6 ${TimeFont.className}`}>
           <p className="text-sm pb-3 text-[#6f6f6f]">
             {new Intl.DateTimeFormat("en-US", {
               year: "numeric",
@@ -22,7 +22,7 @@ const IntroPage = () => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className="text-5xl text-[#171717] leading-tight">
+          <span className="md:text-5xl text-2xl text-[#171717] leading-tight">
             The Power of Keys{" "}
             <motion.span
               animate={{
@@ -48,7 +48,7 @@ const IntroPage = () => {
         </div>
       </div>
       <div className="boxSectionTwo">
-        <div className="py-[6.4rem ">
+        <div className="py-[6.4rem] md:m-0 mr-4">
           <IntroBoxAnimation />
         </div>
       </div>

@@ -2,7 +2,6 @@
 
 import React, { useCallback, useEffect, useState } from "react"
 import { IoMdClose } from "react-icons/io"
-import Button from "./button"
 import Link from "next/link"
 
 type Props = {
@@ -45,7 +44,7 @@ function Modal({
             } ${showModal ? "opacity-100" : "opacity-0"}`}
           >
             <div className="translate h-full lg:h-auto md:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-              <div className="flex items-center p-6 rounded-t justify-center relative border-b-[1px]">
+               <div className="flex items-center p-6 rounded-t justify-center relative border-b-[1px]">
                 <button
                   className="p-1 border-0 hover:opacity-70 transition absolute left-9"
                   onClick={onClose}
@@ -54,21 +53,29 @@ function Modal({
                 </button>
                 <div className="text-lg font-semibold">{title}</div>
               </div>
-              <div className="relative p-6 flex-auto">{body}</div>
+              <div className="relative p-6 flex-auto">{body}d</div>
               <div className="flex flex-col gap-2 p-6">
-                <div className="flex flex-col items-center gap-4 w-full">
-                  <Link
+                <div className="flex w-full">
+                  <div className='space-x-8'>
+                      <Link
                     href="https://www.joshwcomeau.com/css/designing-shadows/"
                     className="w-full"
                   >
-                    <Button disabled={disabled} label={actionLabel} />
+                    <button className="inline-flex items-center w-full px-5 py-3 mb-3 mr-1 text-base font-semibold text-white no-underline align-middle bg-blue-600 border border-transparent border-solid rounded-md cursor-pointer select-none sm:mb-0 sm:w-auto hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700">
+                    Button Text
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button> 
                   </Link>
                   <Link
                     href="https://www.joshwcomeau.com/css/designing-shadows/"
                     className="w-full"
                   >
-                    <Button disabled={disabled} label={actionLabel} />
+                      <button className="inline-flex items-center w-full px-5 py-3 mb-3 mr-1 text-base font-semibold text-white no-underline align-middle bg-blue-600 border border-transparent border-solid rounded-md cursor-pointer select-none sm:mb-0 sm:w-auto hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700">
+                    Button Text
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button> 
                   </Link>
+                  </div>
                 </div>
                 {footer}
               </div>
@@ -79,5 +86,7 @@ function Modal({
     </>
   )
 }
+
+
 
 export default Modal

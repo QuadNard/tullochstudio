@@ -18,26 +18,8 @@ const Footer = () => {
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-3 xl:mt-0">
             <div className="md:grid md:grid-cols-4 md:gap-8">
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900 cursor-pointer">
-                  Features
-                </h3>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Features
-                </h3>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Features
-                </h3>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Features
-                </h3>
-              </div>
+           
+              
             </div>
           </div>
         </div>

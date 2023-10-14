@@ -7,8 +7,8 @@ import "leaflet/dist/leaflet.css"
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png"
 import markerIcon from "leaflet/dist/images/marker-icon.png"
 import markerShadow from "../../../public/imgs/location.png"
-import relocationMarker from "leaflet/dist/images/marker-relocation.png"
 import workMarker from "../../../public/imgs/workplace.png"
+import relocationMarker from "../../../public/imgs/relocation.png"
 import { MapData } from "@/types/types"
 
 const homeIcon = L.icon({
@@ -16,6 +16,10 @@ const homeIcon = L.icon({
   iconSize: [35, 35],
 })
 
+const relocationIcon = L.icon({
+  iconUrl: relocationMarker.src,
+  iconSize: [25, 25],
+})
 
 
 const workIcon = L.icon({
@@ -38,6 +42,14 @@ export const mapData: MapData[] = [
     popUp: "this is nyc",
     markerIcon: workIcon,
   },
+    {
+    id: 3,
+    name: "San Francisco",
+    lgt: [37.774929, -122.419418],
+    popUp: "this is nyc",
+    markerIcon: relocationIcon,
+  },
+  
 ]
 
 // @ts-ignore
@@ -47,7 +59,6 @@ L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x.src,
   shadowUrl: markerShadow.src,
   workMarker: workMarker.src,
-  relocationMarker: relocationMarker.src,
   iconSize: [25, 25],
 })
 

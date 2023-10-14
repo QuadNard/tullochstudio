@@ -1,6 +1,6 @@
 import { getPostBySlug } from "@/lib/markdown/posts"
 
-export const getPageContent = async (slug: string) => {
+const getPageContent = async (slug: string) => {
   const { meta, content } = await getPostBySlug(slug)
   return { meta, content }
 }
