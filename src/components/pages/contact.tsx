@@ -33,7 +33,7 @@ const ContactPage = () => {
   let bodyContent = (
     <div className="flex flex-col gap-8">
       <div className="flex flex-row gap-4">
-        <div className="before:absolute before:w-12 before:h-12 before:bg-orange-800 before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-neutral-900 text-gray-50">
+        <div className="before:absolute before:w-12 before:h-12  before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-blue-300 text-gray-50">
           <Image
             src={markerShadow}
             alt=""
@@ -41,9 +41,9 @@ const ContactPage = () => {
             height={100}
             className="w-30 h-30"
           />
-          <h1>hello</h1>
+          <h1>Remote Work Home</h1>
         </div>
-        <div className="before:absolute before:w-12 before:h-12 before:bg-orange-800 before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-neutral-900 text-gray-50">
+        <div className="before:absolute before:w-12 before:h-12  before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-red-300 text-gray-50">
           <Image
             src={relocationMarker}
             alt=""
@@ -51,9 +51,9 @@ const ContactPage = () => {
             height={100}
             className="w-30 h-30"
           />
-          <h1>hello</h1>
+          <h1>Relocation</h1>
         </div>
-        <div className="before:absolute before:w-12 before:h-12 before:bg-orange-800 before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-neutral-900 text-gray-50">
+        <div className="before:absolute before:w-12 before:h-12 before:rounded-full before:blur-xl before:top-16 relative flex flex-col justify-around items-center w-20 h-24  md:w-44 md:h-44 rounded-2xl shadow-inner shadow-gray-50 bg-purple-300 text-gray-50">
           <Image
             src={workMarker}
             alt=""
@@ -61,7 +61,7 @@ const ContactPage = () => {
             height={100}
             className="w-30 h-30"
           />
-          <h1>hello</h1>
+          <h1>Active Search</h1>
         </div>
       </div>
       <hr />
@@ -89,7 +89,7 @@ const ContactPage = () => {
             <Modal
               isOpen={isModalOpen}
               onClose={() => setIsModalOpen(false)}
-              title="Filters"
+              title="Active Locations"
               actionLabel="Search"
               body={bodyContent}
             />

@@ -30,26 +30,60 @@ const workIcon = L.icon({
 export const mapData: MapData[] = [
   {
     id: 1,
-    name: "Washington D.C",
-    lgt: [27.664827, -81.515754],
-    popUp: "this is dc",
+    name: "York Pennsylvania",
+    lgt: [39.962303, -76.727692],
+    popUp: "Work from home 🏠",
     markerIcon: homeIcon,
   },
   {
     id: 2,
     name: "New York",
     lgt: [40.73061, -73.935242],
-    popUp: "this is nyc",
-    markerIcon: workIcon,
+    popUp: "williing to relocate to New York 💼",
+    markerIcon: relocationIcon,
   },
     {
     id: 3,
-    name: "San Francisco",
-    lgt: [37.774929, -122.419418],
-    popUp: "this is nyc",
+    name: "San Bernardino",
+    lgt: [34.115784, 	-117.302399],
+    popUp: "williing to relocate to san bernardino 💼",
     markerIcon: relocationIcon,
   },
-  
+     {
+    id: 4,
+    name: "Texas Austin",
+    lgt: [30.266666, 		-97.733330],
+    popUp: "🟢 activly looking for remote work here !",
+    markerIcon: workIcon,
+  },
+    {
+    id: 5,
+    name: "Maryland",
+    lgt: [	39.045753, -76.641273],
+    popUp: "🟢 activly looking for remote work here !",
+    markerIcon: workIcon,
+  },
+  {
+    id: 6,
+    name: "Wilmington Delaware",
+    lgt: [39.739071, 	-75.539787],
+    popUp: "williing to relocate to Wilmington Delaware 💼",
+    markerIcon: relocationIcon,
+  },
+    {
+    id: 7,
+    name: "Los Angeles California",
+    lgt: [	34.052235, 	-118.243683],
+    popUp: "🟢 activly looking for remote work here !",
+    markerIcon: workIcon,
+  },
+     {
+    id: 8,
+    name: "Seattle Washington",
+    lgt: [47.608013, 		-122.335167],
+    popUp: "🟢 activly looking for remote work here !",
+    markerIcon: workIcon,
+  },
 ]
 
 // @ts-ignore
@@ -69,8 +103,8 @@ type Props = {
 function Map({ center }: Props) {
   return (
     <MapContainer
-      center={(center as L.LatLngExpression) || [51, -0.09]}
-      zoom={center ? 4 : 2}
+      center={(center as L.LatLngExpression) || [39.328986, -96.349682]}
+      zoom={center ? 6 : 2}
       scrollWheelZoom={false}
       className="h-[40vh] rounded-lg"
     >

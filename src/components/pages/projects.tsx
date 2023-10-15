@@ -122,7 +122,7 @@ const ProjectPage = () => {
             }).format(Date.now())}
           </p>
           <span className="md:text-5xl text-2xl text-[#171717] leading-tight">
-            The Power of Keys{" "}
+            Side{" "}
             <motion.span
               animate={{
                 color: ["#7b1fa2", "#673ab7", "#f48fb1", "#a4dbe8"],
@@ -130,13 +130,12 @@ const ProjectPage = () => {
               transition={{ duration: 8, repeat: Infinity }}
               className=""
             >
-              in Framer Motion
+             projects
             </motion.span>
           </span>
           <p className="pt-8">
-            The mystical attribute in SVG paths is actually a series of small
-            commands. In this guide, we'll take a look at each path command and
-            how we can use them to draw icons.
+            Check out a few of the main projects I have worked on, 
+            or some of my side projects on the left-hand side.
           </p>
           <button className=" text-[#6f6f6f] pt-8">
             <div className="flex item-center gap-4 hover:text-blue-300">

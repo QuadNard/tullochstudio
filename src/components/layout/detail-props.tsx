@@ -29,7 +29,7 @@ function Header(props: HeaderProps) {
   return <div className="space-y-3" {...props} />
 }
 
-function ContentContainer(props: React.HTMLAttributes<HTMLDivElement>) {
+export function ContentContainer(props: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className="mx-auto w-full max-w-3xl px-4 py-12 pb-10 md:px-8"
@@ -44,7 +44,7 @@ export const Container = React.forwardRef<HTMLDivElement, DetailContainerProps>(
       <div
         ref={ref}
         id="main"
-        className="relative flex max-h-screen w-full flex-col overflow-y-auto bg-white dark:bg-black"
+        className="relative flex  max-h-screen lg:w-[900px] xl:w-[1335px] 2xl:w-[1500px] justify-center overflow-x-hidden flex-col overflow-y-auto bg-white dark:bg-black"
         {...props}
       />
     )

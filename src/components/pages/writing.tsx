@@ -15,6 +15,7 @@ import Button from "../lib/button"
 import remarkGfm from "remark-gfm"
 import { ActiveIdProvider, useActiveId } from "../../server/active-provider"
 import { Detail } from "../layout/detail-props"
+import { MarkdownRenderer } from '../lib/markdown'
 
 interface ListContainerProps {
   onRef: (ref: any) => void
@@ -39,8 +40,8 @@ export default function WritingPage() {
       return data
     },
   })
-
-  const filtered = posts?.filter(
+  
+  const filtered = posts?.getPosts.filter(
     (post: any) => post.category_id === perimeter.id
   )
 
@@ -102,7 +103,7 @@ export default function WritingPage() {
                 })}
               </div>
             </ListContainer>
-            <div className="bg-dots hidden lg:flex min-h-screen w-full">
+            <div className="bg-dots hidden lg:flex w-full overflow-x-hidden">
               <PreviewPost post={filtered} />
             </div>
           </div>
@@ -129,6 +130,8 @@ const PreviewPost = ({ post }: { post: any }) => {
     }
   }, [activeId, post])
 
+  
+ 
   return (
     <>
       {activePost ? (
@@ -160,22 +163,9 @@ const PreviewPost = ({ post }: { post: any }) => {
                 {formatDate(activePost.createdAt)}
               </span>
             </Detail.Header>
-            <div className="">
-              <Markdown
-                remarkPlugins={[
-                  [remarkGfm],
-                  [rehypeDocument],
-                  [
-                    rehypeAutolinkHeadings,
-                    {
-                      behavior: "wrap",
-                    },
-                  ],
-                ]}
-              >
-                {activePost.content.toString()}
-              </Markdown>
-            </div>
+        
+              <MarkdownRenderer children={activePost.content}  className='prose mt-8'/>
+                <div className="py-6" />
           </Detail.ContentContainer>
         </Detail.Container>
       ) : (
@@ -276,7 +266,7 @@ function ListContainer({ onRef, children, ...rest }: ListContainerProps) {
   return (
     <div
       ref={scrollContainerRef}
-      className="relative h-full max-h-screen min-h-screen w-full flex-none overflow-y-auto border-r border-gray-150 bg-white dark:border-gray-800 dark:bg-gray-900 lg:w-80 lg:bg-gray-50 lg:dark:bg-gray-900 xl:w-96"
+      className="relative h-full  max-h-screen min-h-screen w-full flex-none overflow-y-auto border-r border-gray-150 bg-white dark:border-gray-800 dark:bg-gray-900 lg:w-80 lg:bg-gray-50 lg:dark:bg-gray-900 xl:w-96"
       {...rest}
     >
       {children}
