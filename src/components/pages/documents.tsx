@@ -4,15 +4,8 @@ import LocalFonts from "next/font/local"
 import { motion } from "framer-motion"
 import { BsArrowUpRight } from "react-icons/bs"
 import { gsap } from "gsap"
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
 import Link from "next/link"
-
-interface CategoryProps {
-  name: string
-  slug: string
-  id: string
-}
+import { useCategoryStore } from '@/store'
 
 const titleFont = LocalFonts({
   src: "../../fonts/subFont/new-york-small-bold.woff2",
@@ -22,13 +15,17 @@ const subFont = LocalFonts({
 })
 
 const DocsPage = () => {
+  const {categories} = useCategoryStore();
+
   const manageMouseEnter = (e: any, index: any) => {
     gsap.to(e.target, {
       top: "-2vw",
-      backgroundColor: category?.[index].color,
+      backgroundColor: categories?.[index].color,
       duration: 0.3,
     })
   }
+ 
+
 
   const manageMouseLeave = (e: any) => {
     gsap.to(e.target, {
@@ -39,13 +36,7 @@ const DocsPage = () => {
     })
   }
 
-  const { data: category } = useQuery({
-    queryKey: ["categories"],
-    queryFn: async () => {
-      const res = await axios.get("/api/categories")
-      return res.data
-    },
-  })
+
 
   return (
     <div className="pageWrapper">
@@ -86,8 +77,8 @@ const DocsPage = () => {
       <div className="boxSectionTwo">
         <h1 className="p-1 text-2xl font-bold">👜 CATEGORIES</h1>
         <motion.div className="flex flex-col items-center justify-center">
-          {category?.map((categories: CategoryProps, idx: number) => (
-            <Link href={`/writings/${categories.id}`} key={idx}>
+          {categories?.map((category, idx) => (
+            <Link href={`/writings/${category.category_id}`} key={idx}>
               <ul
                 className="flex w-full justify-between items-center 
                       cursor-pointer border-t-2 border-black p-8 transition-all duration-300 
@@ -102,7 +93,7 @@ const DocsPage = () => {
                 key={idx}
               >
                 <li className="flex space-x-24">
-                  <p className="md:text-2xl">{categories.name}</p>
+                  <p className="md:text-2xl">{category.category_name}</p>
 
                   <span className="text-xs">Design & Development</span>
                 </li>

@@ -15,7 +15,7 @@ import Button from "../lib/button"
 import remarkGfm from "remark-gfm"
 import { ActiveIdProvider, useActiveId } from "../../server/active-provider"
 import { Detail } from "../layout/detail-props"
-import { MarkdownRenderer } from '../lib/markdown'
+
 
 interface ListContainerProps {
   onRef: (ref: any) => void
@@ -164,7 +164,6 @@ const PreviewPost = ({ post }: { post: any }) => {
               </span>
             </Detail.Header>
         
-              <MarkdownRenderer children={activePost.content}  className='prose mt-8'/>
                 <div className="py-6" />
           </Detail.ContentContainer>
         </Detail.Container>
