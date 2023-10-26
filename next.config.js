@@ -1,21 +1,17 @@
 /** @type {import('next').NextConfig} */
 
-const { withContentlayer } = require("next-contentlayer")
 const nextConfig = {
   webpack: (config) => {
+    // shader support
     config.module.rules.push({
-      test: /\.svg$/,
-      use: [
-        {
-          loader: "@svgr/webpack",
-        },
-      ],
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      exclude: /node_modules/,
+      use: ["raw-loader", "glslify-loader"],
     })
-
     return config
   },
   reactStrictMode: true,
   swcMinify: true,
 }
 
-module.exports = withContentlayer(nextConfig)
+module.exports = nextConfig
