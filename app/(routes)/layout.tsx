@@ -1,5 +1,5 @@
-import LayoutProvider from "../providers/wrapper"
 import "./globals.css"
+import CustomCursor from "../components/cursor/customCursor"
 
 export default function RootLayout({
   children,
@@ -9,7 +9,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <LayoutProvider>{children}</LayoutProvider>
+        <CustomCursor />
+        {children}
       </body>
     </html>
   )
