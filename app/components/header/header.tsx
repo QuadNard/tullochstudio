@@ -14,7 +14,7 @@ function Links() {
   return (
     <div className="hidden list-none gap-4 md:flex">
       <Link
-        href="/"
+        href="https://github.com/QuadNard?tab=repositories"
         data-type="button"
         className="ia group flex  w-fit items-center gap-4"
         aria-label="Button to about page"
@@ -26,8 +26,7 @@ function Links() {
           <Github className="absolute h-5 w-5" />
         </button>
       </Link>
-      <Link
-        href="/"
+      <Link href="/"
         data-type="button"
         className="ia group flex w-fit items-center gap-4"
         aria-label="Button to about page"
@@ -62,7 +61,7 @@ const Header = () => {
           type="button"
           className="inline-flex w-full transform items-center justify-center 
                     rounded-full border-2 border-black bg-transparent px-8 py-2 
-                     text-center text-sm text-black shadow-[5px_5px_black] transition 
+                    text-center text-sm text-black shadow-[5px_5px_black] transition 
                     duration-200 ease-in-out hover:bg-[#75d5b9] hover:shadow-none focus:outline-none"
         >
           Button
