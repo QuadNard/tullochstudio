@@ -24,11 +24,17 @@ const Footer = (props: any) => {
   return (
     <div className="flex flex-col items-center justify-center pt-[70px]">
       <div className="flex flex-wrap justify-between">
-        <div className={`mt-[50px] flex-1 text-[55px] ${props.mediumFont.className}`}>Tullochstudio</div>
+        <div
+          className={`mt-[50px] flex-1 text-[55px] ${props.mediumFont.className}`}
+        >
+          Tullochstudio
+        </div>
         <div className="mt-[100px] flex min-h-[370px] min-w-[270px] flex-1 flex-col justify-between">
           <div className="relative flex flex-col p-8">
             <div className="border-b border-black">
-              <h1 className={`p-3 ${props.h1Font.className}`}>{`Let's get in touch -`} </h1>
+              <h1 className={`p-3 ${props.h1Font.className}`}>
+                {`Let's get in touch -`}{" "}
+              </h1>
             </div>
             <div className="flex items-center justify-center pt-4">
               <div className="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4">

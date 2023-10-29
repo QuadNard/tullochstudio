@@ -34,7 +34,7 @@ const About = (props: any) => {
   return (
     <div className="pageWrapper">
       <div className="boxSection">
-        <div className='text-bold p-6 text-left md:text-right'>
+        <div className="text-bold p-6 text-left md:text-right">
           <p className="pb-3 text-sm text-[#6f6f6f]">
             {new Intl.DateTimeFormat("en-US", {
               year: "numeric",
@@ -42,11 +42,13 @@ const About = (props: any) => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}>
+          <span
+            className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
+          >
             I design and{" "}
             <motion.span
               animate={{
-                color:  ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
+                color: ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
               }}
               transition={{ duration: 8, repeat: Infinity }}
               className=""
@@ -67,7 +69,7 @@ const About = (props: any) => {
                   aria-label="Button to about page"
                 >
                   <div className="flex h-8 w-8 items-center justify-center before:absolute before:h-8 before:w-8 before:rounded-full before:border before:border-crftd-gray before:transition-all before:duration-300 before:ease-out group-hover:before:h-12 group-hover:before:w-12 group-hover:before:border-0 group-hover:before:bg-[#75d5b9]">
-                    <ArrowRight size={15} className='z-0 absolute text-black' />
+                    <ArrowRight size={15} className="absolute z-0 text-black" />
                   </div>
                 </div>
               </div>
@@ -109,10 +111,16 @@ const About = (props: any) => {
         </div>
       </div>
       <div className="boxSectionTwo">
-        <div className="flex flex-row m-1">
-        <Image src={sparkleIcon} className="sparkle-icon" width={30} height={30} alt={""} />
-        <h1 className='p-2 text-black border-b border-black'>  01.-- ABOUT</h1>
-      </div>
+        <div className="m-1 flex flex-row">
+          <Image
+            src={sparkleIcon}
+            className="sparkle-icon"
+            width={30}
+            height={30}
+            alt={""}
+          />
+          <h1 className="border-b border-black p-2 text-black"> 01.-- ABOUT</h1>
+        </div>
         <div className="h-[250px] md:h-[300px]">
           <Suspense fallback={null}>
             <Canvas camera={{ position: [0, 0, 0.2], near: 0.001, far: 5 }}>

@@ -36,7 +36,7 @@ const experienceData = [
   // Add more experience items as needed
 ]
 
-const Contact = (props:any) => {
+const Contact = (props: any) => {
   const [currentExperience, setCurrentExperience] = useState(0)
 
   const openNextExperience = () => {
@@ -64,11 +64,13 @@ const Contact = (props:any) => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}>
+          <span
+            className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
+          >
             I design and{" "}
             <motion.span
               animate={{
-                color:  ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
+                color: ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
               }}
               transition={{ duration: 8, repeat: Infinity }}
               className=""
@@ -114,7 +116,9 @@ const Contact = (props:any) => {
                     <div className="experience-modal-name-div">
                       {experience.name}
                     </div>
-                    <div className={`experience-modal-date-and-place-div text-gray-400 ${props.h1Font.className}`}>
+                    <div
+                      className={`experience-modal-date-and-place-div text-gray-400 ${props.h1Font.className}`}
+                    >
                       <div className="experience-modal-date-div">
                         {experience.date}
                       </div>
@@ -130,23 +134,24 @@ const Contact = (props:any) => {
                   <div className="experience-modal-bottom-part-left-div modal-left-side">
                     In-depth overview -
                   </div>
-                  <div className={`experience-modal-bottom-part-right-div modal-right-side ${props.h1Font.className}`}>
+                  <div
+                    className={`experience-modal-bottom-part-right-div modal-right-side ${props.h1Font.className}`}
+                  >
                     {experience.description}
                   </div>
                 </div>
                 <div className="experience-modal-bottom-buttons-div">
                   <button
                     onClick={openPrevExperience}
-                    className="mr-2 rounded flex bg-transparent px-4 py-2 text-black hover:bg-blue-400"
+                    className="mr-2 flex rounded bg-transparent px-4 py-2 text-black hover:bg-blue-400"
                   >
-                  <ChevronLeft className='' />
+                    <ChevronLeft className="" />
                     Previous
                   </button>
                   <button
                     onClick={openNextExperience}
-                    className="rounded flex bg-transparent px-4 py-2 text-black hover:bg-blue-400"
+                    className="flex rounded bg-transparent px-4 py-2 text-black hover:bg-blue-400"
                   >
-                    
                     Next
                     <ChevronRight />
                   </button>

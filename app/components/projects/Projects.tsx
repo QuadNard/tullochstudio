@@ -11,21 +11,29 @@ import Link from "next/link"
 import classNames from "classnames"
 import BlurImage from "../blur/Blur-Image"
 import { PROJECT_LIST } from "../../../utils/constants"
-import  { ArrowLeft } from 'lucide-react'; 
+import { ArrowLeft } from "lucide-react"
 import Image from "next/image"
-import sparkleIcon from "../skills/resources/images/star-icon.svg";
+import sparkleIcon from "../skills/resources/images/star-icon.svg"
 
-
-const Projects = (props:any) => {
+const Projects = (props: any) => {
   const [activeFeature, setActiveFeature] = useState(0)
 
   return (
     <div className="pageWrapper">
       <div className="boxSection">
-         <div className="flex flex-row m-1">
-       <Image src={sparkleIcon} className="sparkle-icon" width={30} height={30} alt={""} />
-       <h1 className='p-2 text-black border-b border-black'>  02. PROJECTS</h1>
-      </div>
+        <div className="m-1 flex flex-row">
+          <Image
+            src={sparkleIcon}
+            className="sparkle-icon"
+            width={30}
+            height={30}
+            alt={""}
+          />
+          <h1 className="border-b border-black p-2 text-black">
+            {" "}
+            02. PROJECTS
+          </h1>
+        </div>
         <div className="my-10 w-full overflow-hidden rounded-xl border border-gray-200 bg-white shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur lg:h-[600px]">
           <div className="grid grid-cols-1 gap-10 p-5 lg:grid-cols-1">
             <Accordion
@@ -74,7 +82,7 @@ const Projects = (props:any) => {
                           href={feature.siteUrl}
                           className="block max-w-fit rounded-full border border-black bg-transparent px-4 py-1.5 text-sm text-black transition-all hover:bg-[#75d5b9] "
                         >
-                         See Code
+                          See Code
                         </Link>
                         <Link
                           href={feature.siteUrl}
@@ -136,7 +144,9 @@ const Projects = (props:any) => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}>
+          <span
+            className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
+          >
             Side{" "}
             <motion.span
               animate={{
@@ -164,7 +174,7 @@ const Projects = (props:any) => {
                   type="button"
                   className="flex h-8 w-8 items-center justify-center before:absolute before:h-8 before:w-8 before:rounded-full before:border before:border-crftd-gray before:transition-all before:duration-300 before:ease-out group-hover:before:h-12 group-hover:before:w-12 group-hover:before:border-0 group-hover:before:bg-[#75d5b9]"
                 >
-                 <ArrowLeft size={15} className='z-0 absolute text-black' />
+                  <ArrowLeft size={15} className="absolute z-0 text-black" />
                 </button>
               </Link>
               <p>Explore my repositories</p>

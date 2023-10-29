@@ -27,7 +27,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
             src={images[currentIndex]}
-            className={`inset-0 h-[250px] w-[400px] object-cover rounded-md`}
+            className={`inset-0 h-[250px] w-[400px] rounded-md object-cover`}
             width={32}
             height={32}
             alt={`Image ${currentIndex + 1}`}

@@ -8,19 +8,19 @@ import { Suspense } from "react"
 import LocalFonts from "next/font/local"
 
 const h1Font = LocalFonts({
-  src: '../../public/fonts/subFonts/new-york-small-regular.woff2'
+  src: "../../public/fonts/subFonts/new-york-small-regular.woff2",
 })
 
 export const boldFont = LocalFonts({
-  src: '../../public/fonts/subFonts/new-york-small-bold.woff2'
-});
+  src: "../../public/fonts/subFonts/new-york-small-bold.woff2",
+})
 
 export const mediumFont = LocalFonts({
-  src: '../../public/fonts/subFonts/new-york-small-medium.woff2'
+  src: "../../public/fonts/subFonts/new-york-small-medium.woff2",
 })
 
 const italicFont = LocalFonts({
-  src: '../../public/fonts/subFonts/new-york-small-medium-italic.woff2'
+  src: "../../public/fonts/subFonts/new-york-small-medium-italic.woff2",
 })
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
         <Header mediumFont={mediumFont} boldFont={boldFont} h1Font={h1Font} />
         <div className="flex flex-col items-center justify-center">
           <Suspense fallback={<div>Loading...</div>}>
-            <About h1Font={h1Font} mediumFont={mediumFont}  />
+            <About h1Font={h1Font} mediumFont={mediumFont} />
           </Suspense>
           <Suspense fallback={<div>Loading...</div>}>
             <Projects h1Font={h1Font} mediumFont={mediumFont} />
