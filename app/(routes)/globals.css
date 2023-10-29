@@ -83,6 +83,7 @@
   --main-grey-color: rgb(78, 78, 78);
   --main-background-color: #eaeaea;
   --main-backdrop-color: #ffffff59;
+  --small-font-size: 9px;
   /* gradients ----------------------- */
   --main-green-color: #0bbb87;
   --main-blue-color: #4586ce;
@@ -317,12 +318,12 @@ body::after {
 }
 
 .experience-modal-bottom-part-left-div {
-  font-size: var(--small-font-size);
+  font-size: 13px;
   font-weight: 1000;
 }
 
 .experience-modal-bottom-part-right-div {
-  font-size: var(--small-font-size);
+  font-size: 13px;
   overflow-y: auto;
   margin-bottom: 20px;
 }

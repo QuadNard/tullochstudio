@@ -1,20 +1,15 @@
-import LocalFonts from "next/font/local"
+
 import Link from "next/link"
 import { Github, Linkedin } from "lucide-react"
 
-const TitleFont = LocalFonts({
-  src: "../../../public/fonts/subFonts/new-york-small-bold.woff2",
-})
+import { AnimatedText } from '../loader/AnimatedText'
 
-const SubTitleFont = LocalFonts({
-  src: "../../../public/fonts/subFonts/new-york-small-medium.woff2",
-})
 
 function Links() {
   return (
     <div className="hidden list-none gap-4 md:flex">
       <Link
-        href="https://github.com/QuadNard?tab=repositories"
+        href="https://github.com/QuadNard"
         data-type="button"
         className="ia group flex  w-fit items-center gap-4"
         aria-label="Button to about page"
@@ -26,7 +21,7 @@ function Links() {
           <Github className="absolute h-5 w-5" />
         </button>
       </Link>
-      <Link href="/"
+      <Link href="https://www.linkedin.com/in/justin-kinard-tulloch/"
         data-type="button"
         className="ia group flex w-fit items-center gap-4"
         aria-label="Button to about page"
@@ -42,30 +37,25 @@ function Links() {
   )
 }
 
-const Header = () => {
+const Header = (props: any) => {
   return (
     <div className="flex items-center pb-16 pt-16 md:mb-[4rem] md:justify-between md:space-x-64 md:p-16">
       <Links />
-      <h1
-        className={`text-5xl leading-tight antialiased ${TitleFont.className}`}
-      >
-        TullochStudio
-        <span
-          className={`mt-[0.5rem] block text-center text-sm text-[#6f6f6f] ${SubTitleFont.className}`}
-        >
-          by Justin Tulloch
-        </span>
-      </h1>
+        <AnimatedText text='Tullochstudio' className={`md:text-4xl text-5xl leading-tight antialiased ${props.boldFont.className}`} />
       <div className="hidden md:flex">
-        <button
+        <Link href='https://calendly.com/jkinardtulloch/15-20-minutes-screen-interview?month=2023-10'>
+          <button
           type="button"
           className="inline-flex w-full transform items-center justify-center 
                     rounded-full border-2 border-black bg-transparent px-8 py-2 
                     text-center text-sm text-black shadow-[5px_5px_black] transition 
                     duration-200 ease-in-out hover:bg-[#75d5b9] hover:shadow-none focus:outline-none"
-        >
-          Button
+          >
+            <h1 className={`flex flex-row text-xs ${props.h1Font.className}`}>
+          📞 Schedule !
+            </h1>
         </button>
+        </Link>
       </div>
     </div>
   )

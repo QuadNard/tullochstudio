@@ -4,14 +4,13 @@ import React, { useState } from "react"
 import LocalFonts from "next/font/local"
 import SkillsContent from "../skills/SkillsContent"
 import { motion } from "framer-motion"
-import { BsArrowUpRight } from "react-icons/bs"
 import * as Dialog from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
-import { Experience } from "../../../types/index"
 import ImageSlider from "../slider/ImageSlider"
-import Link from "next/link"
 import Image from "next/image"
 import arrowIcon from "../../../public/imgs/arrow-right-dark.svg"
+import { ChevronRight } from "lucide-react"
+import { ChevronLeft } from "lucide-react"
 
 const TimeFont = LocalFonts({
   src: "../../../public/fonts/subFonts/new-york-small-regular.woff2",
@@ -37,7 +36,7 @@ const experienceData = [
   // Add more experience items as needed
 ]
 
-const Contact = () => {
+const Contact = (props:any) => {
   const [currentExperience, setCurrentExperience] = useState(0)
 
   const openNextExperience = () => {
@@ -65,11 +64,11 @@ const Contact = () => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className="text-2xl leading-tight text-[#171717] md:text-5xl">
+          <span className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}>
             I design and{" "}
             <motion.span
               animate={{
-                color: ["#7b1fa2", "#673ab7", "#f48fb1", "#a4dbe8"],
+                color:  ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
               }}
               transition={{ duration: 8, repeat: Infinity }}
               className=""
@@ -112,13 +111,10 @@ const Contact = () => {
                 </div>
                 <div className="d-h-[27dvh] flex h-[27vh] gap-4">
                   <div className="experience-modal-top-part-left-div modal-left-side">
-                    <div className="experience-modal-category-header-div">
-                      EXPERIENCE
-                    </div>
                     <div className="experience-modal-name-div">
                       {experience.name}
                     </div>
-                    <div className="experience-modal-date-and-place-div">
+                    <div className={`experience-modal-date-and-place-div text-gray-400 ${props.h1Font.className}`}>
                       <div className="experience-modal-date-div">
                         {experience.date}
                       </div>
@@ -134,22 +130,25 @@ const Contact = () => {
                   <div className="experience-modal-bottom-part-left-div modal-left-side">
                     In-depth overview -
                   </div>
-                  <div className="experience-modal-bottom-part-right-div modal-right-side">
+                  <div className={`experience-modal-bottom-part-right-div modal-right-side ${props.h1Font.className}`}>
                     {experience.description}
                   </div>
                 </div>
                 <div className="experience-modal-bottom-buttons-div">
                   <button
                     onClick={openPrevExperience}
-                    className="mr-2 rounded bg-blue-300 px-4 py-2 text-white hover:bg-blue-400"
+                    className="mr-2 rounded flex bg-transparent px-4 py-2 text-black hover:bg-blue-400"
                   >
+                  <ChevronLeft className='' />
                     Previous
                   </button>
                   <button
                     onClick={openNextExperience}
-                    className="rounded bg-blue-300 px-4 py-2 text-white hover:bg-blue-400"
+                    className="rounded flex bg-transparent px-4 py-2 text-black hover:bg-blue-400"
                   >
+                    
                     Next
+                    <ChevronRight />
                   </button>
                 </div>
               </Dialog.Content>
