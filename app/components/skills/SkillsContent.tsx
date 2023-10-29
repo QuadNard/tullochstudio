@@ -1,9 +1,8 @@
 import React from "react"
 import { useLayoutEffect, useRef } from "react"
 import { gsap } from "../../../utils/gsap"
-import { getRandom } from "../../../utils/utils"
 import { skills } from "./resources/data/skill"
-import sparkleIcon from "./resources/images/sparkle-icon.svg"
+import sparkleIcon from "./resources/images/star-icon.svg"
 import Image from "next/image"
 
 const SkillsContent = () => {
@@ -25,7 +24,16 @@ const SkillsContent = () => {
 
   return (
     <>
-      <h1 className="p-2 text-black">02.1. SKILLS</h1>
+      <div className="m-1 flex flex-row">
+        <Image
+          src={sparkleIcon}
+          className="sparkle-icon"
+          width={30}
+          height={30}
+          alt={""}
+        />
+        <h1 className="border-b border-black p-2 text-black"> 03. SKILLS</h1>
+      </div>
       <div className="flex flex-wrap gap-4" ref={skillsRef}>
         {skills.map((skill) => {
           return (

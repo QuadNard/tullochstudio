@@ -12,7 +12,7 @@ function Socials({ icon, link }: SocialsType) {
   return (
     <>
       <Link href={link}>
-        <div className="rounded-full border border-neutral-900 bg-black/40  p-4 duration-200 ease-in-out hover:scale-105 active:-rotate-[360deg]">
+        <div className="rounded-full border border-neutral-900 bg-black/40  p-2 duration-200 ease-in-out hover:scale-105 active:-rotate-[360deg]">
           <Icon color="#e5e5e5" size={36} />
         </div>
       </Link>
@@ -20,15 +20,21 @@ function Socials({ icon, link }: SocialsType) {
   )
 }
 
-const Footer = () => {
+const Footer = (props: any) => {
   return (
-    <div className="flex flex-col items-center justify-center  pt-[70px]">
+    <div className="flex flex-col items-center justify-center pt-[70px]">
       <div className="flex flex-wrap justify-between">
-        <div className="mt-[50px] flex-1 text-[55px]">Tullochstudio</div>
+        <div
+          className={`mt-[50px] flex-1 text-[55px] ${props.mediumFont.className}`}
+        >
+          Tullochstudio
+        </div>
         <div className="mt-[100px] flex min-h-[370px] min-w-[270px] flex-1 flex-col justify-between">
           <div className="relative flex flex-col p-8">
             <div className="border-b border-black">
-              <h1 className="p-3">{`Let's get in touch -`} </h1>
+              <h1 className={`p-3 ${props.h1Font.className}`}>
+                {`Let's get in touch -`}{" "}
+              </h1>
             </div>
             <div className="flex items-center justify-center pt-4">
               <div className="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4">

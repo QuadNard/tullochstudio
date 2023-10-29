@@ -10,7 +10,8 @@ import { Tubes } from "../brain/brain-tubes"
 import * as Dialog from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
 import Image from "next/image"
-import arrowIcon from "../../../public/imgs/arrow-right-dark.svg"
+import { ArrowRight } from "lucide-react"
+import sparkleIcon from "../skills/resources/images/star-icon.svg"
 function createBrainCurvesFromPaths(): THREE.CatmullRomCurve3[] {
   const paths = data.economics[0].paths
 
@@ -29,11 +30,11 @@ function createBrainCurvesFromPaths(): THREE.CatmullRomCurve3[] {
 
 const curves = createBrainCurvesFromPaths()
 
-const About = () => {
+const About = (props: any) => {
   return (
     <div className="pageWrapper">
       <div className="boxSection">
-        <div className={`text-bold  p-6 text-left md:text-right `}>
+        <div className="text-bold p-6 text-left md:text-right">
           <p className="pb-3 text-sm text-[#6f6f6f]">
             {new Intl.DateTimeFormat("en-US", {
               year: "numeric",
@@ -41,11 +42,13 @@ const About = () => {
               day: "numeric",
             }).format(Date.now())}
           </p>
-          <span className="text-2xl leading-tight text-[#171717] md:text-5xl">
+          <span
+            className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
+          >
             I design and{" "}
             <motion.span
               animate={{
-                color: ["#7b1fa2", "#673ab7", "#f48fb1", "#a4dbe8"],
+                color: ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
               }}
               transition={{ duration: 8, repeat: Infinity }}
               className=""
@@ -53,24 +56,20 @@ const About = () => {
               develop applications
             </motion.span>
           </span>
-          <p className="pt-8">
+          <p className={`pt-8 ${props.h1Font.className}`}>
             Check out a few of the main projects I have worked on, or some of my
             side projects on the left-hand side.
           </p>
           <Dialog.Root>
             <Dialog.Trigger className=" pt-8 text-[#6f6f6f]">
               <div className="item-center flex gap-4 hover:text-blue-300">
-                <p>Read more</p>
+                <p>Learn more about me</p>
                 <div
                   className="ia group flex w-fit items-center gap-4"
                   aria-label="Button to about page"
                 >
                   <div className="flex h-8 w-8 items-center justify-center before:absolute before:h-8 before:w-8 before:rounded-full before:border before:border-crftd-gray before:transition-all before:duration-300 before:ease-out group-hover:before:h-12 group-hover:before:w-12 group-hover:before:border-0 group-hover:before:bg-[#75d5b9]">
-                    <Image
-                      src={arrowIcon}
-                      alt="arrow right icon"
-                      className="z-0 "
-                    />
+                    <ArrowRight size={15} className="absolute z-0 text-black" />
                   </div>
                 </div>
               </div>
@@ -112,6 +111,16 @@ const About = () => {
         </div>
       </div>
       <div className="boxSectionTwo">
+        <div className="m-1 flex flex-row">
+          <Image
+            src={sparkleIcon}
+            className="sparkle-icon"
+            width={30}
+            height={30}
+            alt={""}
+          />
+          <h1 className="border-b border-black p-2 text-black"> 01.-- ABOUT</h1>
+        </div>
         <div className="h-[250px] md:h-[300px]">
           <Suspense fallback={null}>
             <Canvas camera={{ position: [0, 0, 0.2], near: 0.001, far: 5 }}>
