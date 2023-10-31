@@ -45,7 +45,7 @@ const About = (props: any) => {
           <span
             className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
           >
-            I design and{" "}
+            Interactive design-{" "}
             <motion.span
               animate={{
                 color: ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
@@ -53,17 +53,18 @@ const About = (props: any) => {
               transition={{ duration: 8, repeat: Infinity }}
               className=""
             >
-              develop applications
+              exploring immersive interfaces
             </motion.span>
           </span>
           <p className={`pt-8 ${props.h1Font.className}`}>
-            Check out a few of the main projects I have worked on, or some of my
-            side projects on the left-hand side.
+            As a developer, I challenge myself to think outside the box. focusing on
+            sleek design, and the latest technologies.
+            
           </p>
           <Dialog.Root>
             <Dialog.Trigger className=" pt-8 text-[#6f6f6f]">
               <div className="item-center flex gap-4 hover:text-blue-300">
-                <p>Learn more about me</p>
+                <p>See my thought process</p>
                 <div
                   className="ia group flex w-fit items-center gap-4"
                   aria-label="Button to about page"
@@ -78,14 +79,14 @@ const About = (props: any) => {
               <Dialog.Overlay className="fixed inset-0 bg-black/50" />
               <Dialog.Content className="fixed left-1/2 top-1/2 w-full max-w-md -translate-x-1/2 -translate-y-1/2 rounded-md bg-white p-8 text-gray-900 shadow">
                 <div className="flex items-center justify-between">
-                  <Dialog.Title className="text-xl">About</Dialog.Title>
+                  <Dialog.Title className="text-xl m-1 border-b-2">More about me</Dialog.Title>
                   <Dialog.Close className="text-gray-400 hover:text-gray-500">
                     <X />
                   </Dialog.Close>
                 </div>
                 <div className="flex flex-col items-center">
                   <Image
-                    className="pointer-events-none mb-4 select-none rounded-md"
+                    className="pointer-events-none mt-2 mb-4 select-none rounded-md"
                     src="/imgs/profile.jpg"
                     quality={100}
                     priority
@@ -94,15 +95,17 @@ const About = (props: any) => {
                     alt="A picture from Mehdi"
                   />
                   <h1 className="select-none text-center text-lg font-medium text-neutral-200 md:text-xl lg:text-3xl">
-                    Mehdi
+                    Detail-obsessed Design Engineer
                   </h1>
                   <h2 className="select-none text-center text-base font-normal text-neutral-400 md:text-lg lg:text-xl">
-                    @DaraCrafts
+                    @jkinardtulloch@gmail.com
                   </h2>
-                  <p className="mt-4 text-start text-lg font-normal tracking-tight text-neutral-200 [text-wrap:balance] lg:text-xl">
-                    Someone Mac User Who Uses Cutting-Edge{" "}
-                    <span className="text-blue-500">Technology</span> to Build
-                    the Future of the Web
+                  <p className="mt-4 text-start text-xs font-normal tracking-tight text-neutral-600 [text-wrap:balance] md:text-lg  md:max-h-36 overflow-y-auto">
+                    <span className='text-blue-500'> Hey, I'm Justin Tulloch 😄 {" "}</span>
+                     my passion lies in creating software that is both beautiful and functional. I’ve been designing for over 3 years and recently started getting into programming. My thought process revolves around the art of crafting elegant and efficient solutions. 
+                    I thrive on the thrill of creating functional and user-friendly software that not only meets the technical requirements but also delivers a great user experience.
+                    My commitment to continuous learning and staying up-to-date with the latest industry trends ensures that my code is not just functional but also future-proof. 
+                    For me, coding is not just a profession but a fulfilling journey of turning ideas into reality, one line of code at a time.
                   </p>
                 </div>
               </Dialog.Content>

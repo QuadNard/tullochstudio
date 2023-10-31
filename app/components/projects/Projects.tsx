@@ -159,13 +159,13 @@ const Projects = (props: any) => {
             </motion.span>
           </span>
           <p className="pt-8">
-            Check out a few of the main projects I have worked on, or some of my
-            side projects on the left-hand side.
+            On the side I tinker with side projects here and there with high-level individual contributors. 
+            continuing to learn and growing.
           </p>
           <div className=" pt-8 text-[#6f6f6f]">
             <div className="item-center flex gap-4 hover:text-blue-300">
               <Link
-                href="/"
+                href="https://github.com/QuadNard/tullochstudio"
                 data-type="button"
                 className="ia group flex w-fit items-center gap-4"
                 aria-label="Button to about page"

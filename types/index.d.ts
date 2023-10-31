@@ -40,6 +40,6 @@ export interface ExperienceImage {
 }
 
 export interface Social {
-  icon: IconType
+  img: string
   url: string
 }
