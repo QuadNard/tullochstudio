@@ -1,5 +1,5 @@
 import { color } from "framer-motion"
-import { Framer, Github, Laptop, Mailbox, Twitter } from "lucide-react"
+import {   Laptop } from "lucide-react"
 import { Social } from "../types"
 import reactIcon from "../app/components/skills/resources/images/react-icon-min.png"
 import typescriptIcon from "../app/components/skills/resources/images/typescript-icon-min.png"
@@ -8,6 +8,10 @@ import reactQuery from "../app/components/skills/resources/images/reactquery.svg
 import TailwindCss from "../app/components/skills/resources/images/tailwindcss.svg"
 import NextJs from "../app/components/skills/resources/images/nextjs.svg"
 import Supabase from "../app/components/skills/resources/images/supabase.svg"
+import Github from "../app/components/skills/resources/images/github.svg"
+import Twitter from "../app/components/skills/resources/images/twitter.svg"
+import Discord from "../app/components/skills/resources/images/discord.svg"
+import Gmail from "../app/components/skills/resources/images/gmail.svg"
 
 export const PROJECT_LIST = [
   {
@@ -55,19 +59,19 @@ export const PROJECT_LIST = [
 
 export const socials: Social[] = [
   {
-    icon: Github as any,
-    url: "https://github.com",
+    img: Github as any,
+    url: "https://github.com/QuadNard",
   },
   {
-    icon: Twitter as any,
+    img: Discord as any,
+    url: "https://discordapp.com/users/557014236094660642",
+  },
+  {
+    img: Twitter as any,
     url: "https://twitter.com",
   },
   {
-    icon: Framer as any,
-    url: "https://framer.com",
-  },
-  {
-    icon: Mailbox as any,
+    img: Gmail as any,
     url: "mailto:jkinardtulloch@gmail.com",
   },
 ]

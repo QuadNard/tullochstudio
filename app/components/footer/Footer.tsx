@@ -1,19 +1,19 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import Link from "next/link"
 import { socials } from "../../../utils/constants"
+import Image from "next/image"
 
 type SocialsType = {
-  icon: ({ color, size }: { color: string; size: number }) => JSX.Element
+  img: string 
   link: string
 }
 
-function Socials({ icon, link }: SocialsType) {
-  const Icon = icon
+function Socials({ img, link }: SocialsType) {
   return (
     <>
       <Link href={link}>
-        <div className="rounded-full border border-neutral-900 bg-black/40  p-2 duration-200 ease-in-out hover:scale-105 active:-rotate-[360deg]">
-          <Icon color="#e5e5e5" size={36} />
+        <div className="rounded-full border border-neutral-900 bg-black/40 p-4 duration-200 ease-in-out hover:scale-105 active:-rotate-[360deg]">
+          <Image src={img} alt="img" width={36} height={36} />
         </div>
       </Link>
     </>
@@ -39,7 +39,7 @@ const Footer = (props: any) => {
             <div className="flex items-center justify-center pt-4">
               <div className="grid grid-cols-2 place-items-center gap-2 md:grid-cols-4">
                 {socials.map((social, index) => (
-                  <Socials key={index} icon={social.icon} link={social.url} />
+                  <Socials key={index} img={social.img} link={social.url} />
                 ))}
               </div>
             </div>

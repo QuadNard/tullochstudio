@@ -46,7 +46,7 @@ export const AnimatedText = ({ text, className }: AnimatedTextProps) => {
       <span
         className={`mt-[0.5rem] block text-center text-xs text-[#6f6f6f] ${mediumFont.className}`}
       >
-        by Justin Tulloch
+      web / software developer
       </span>
     </h1>
   )
