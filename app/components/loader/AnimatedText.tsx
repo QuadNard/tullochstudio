@@ -1,7 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { mediumFont } from "../../(routes)/page"
+import LocalFonts from "next/font/local"
+
+const mediumFont = LocalFonts({
+  src: "../../../public/fonts/subFonts/new-york-small-medium.woff2",
+})
 
 type AnimatedTextProps = {
   text: string
@@ -46,7 +50,7 @@ export const AnimatedText = ({ text, className }: AnimatedTextProps) => {
       <span
         className={`mt-[0.5rem] block text-center text-xs text-[#6f6f6f] ${mediumFont.className}`}
       >
-      web / software developer
+        web / software developer
       </span>
     </h1>
   )
