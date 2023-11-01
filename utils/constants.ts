@@ -1,5 +1,5 @@
 import { color } from "framer-motion"
-import {   Laptop } from "lucide-react"
+import { Laptop } from "lucide-react"
 import { Social } from "../types"
 import reactIcon from "../app/components/skills/resources/images/react-icon-min.png"
 import typescriptIcon from "../app/components/skills/resources/images/typescript-icon-min.png"

@@ -4,7 +4,7 @@ import { socials } from "../../../utils/constants"
 import Image from "next/image"
 
 type SocialsType = {
-  img: string 
+  img: string
   link: string
 }
 

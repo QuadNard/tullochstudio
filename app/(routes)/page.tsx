@@ -11,16 +11,12 @@ const h1Font = LocalFonts({
   src: "../../public/fonts/subFonts/new-york-small-regular.woff2",
 })
 
-export const boldFont = LocalFonts({
+const boldFont = LocalFonts({
   src: "../../public/fonts/subFonts/new-york-small-bold.woff2",
 })
 
-export const mediumFont = LocalFonts({
+const mediumFont = LocalFonts({
   src: "../../public/fonts/subFonts/new-york-small-medium.woff2",
-})
-
-const italicFont = LocalFonts({
-  src: "../../public/fonts/subFonts/new-york-small-medium-italic.woff2",
 })
 
 export default function Home() {

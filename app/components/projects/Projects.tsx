@@ -159,8 +159,8 @@ const Projects = (props: any) => {
             </motion.span>
           </span>
           <p className="pt-8">
-            On the side I tinker with side projects here and there with high-level individual contributors. 
-            continuing to learn and growing.
+            On the side I tinker with side projects here and there with
+            high-level individual contributors. continuing to learn and growing.
           </p>
           <div className=" pt-8 text-[#6f6f6f]">
             <div className="item-center flex gap-4 hover:text-blue-300">

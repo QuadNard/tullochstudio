@@ -22,16 +22,28 @@ const experienceData = [
     name: "Journey into how I gained my unique skills, in the field of web deevelopment 🛠",
     date: "2021-07-01",
     place: "Local, PA",
-    description: "My journey to becoming a software engineer has been a winding and fulfilling one. It all started with my passion for technology, as I began building custom computers from a young age. This hands-on experience laid the foundation for my understanding of hardware and software interactions. When I entered college, I decided to take my first engineering design class, and the experience was truly transformative. It ignited my curiosity and enthusiasm for the world of programming and problem-solving. Eager to learn more, I delved into textbooks and online resources, taking on the role of a self-taught developer. Through countless hours of coding, debugging, and seeking guidance from the vast online community, I honed my skills. This path, from tinkering with hardware to studying engineering and ultimately becoming a self-taught developer, equipped me with the knowledge and tenacity required to excel in my current position as a junior frontend software engineer. The diversity of my experiences has allowed me to approach challenges with a holistic perspective and a passion for continuous learning and innovation.",
-    images: ["/imgs/my-custom-pc.jpg", "/imgs/design-class.jpg", "/imgs/books-of-study.jpg", "/imgs/system-design.jpg"],
+    description:
+      "My journey to becoming a software engineer has been a winding and fulfilling one. It all started with my passion for technology, as I began building custom computers from a young age. This hands-on experience laid the foundation for my understanding of hardware and software interactions. When I entered college, I decided to take my first engineering design class, and the experience was truly transformative. It ignited my curiosity and enthusiasm for the world of programming and problem-solving. Eager to learn more, I delved into textbooks and online resources, taking on the role of a self-taught developer. Through countless hours of coding, debugging, and seeking guidance from the vast online community, I honed my skills. This path, from tinkering with hardware to studying engineering and ultimately becoming a self-taught developer, equipped me with the knowledge and tenacity required to excel in my current position as a junior frontend software engineer. The diversity of my experiences has allowed me to approach challenges with a holistic perspective and a passion for continuous learning and innovation.",
+    images: [
+      "/imgs/my-custom-pc.jpg",
+      "/imgs/design-class.jpg",
+      "/imgs/books-of-study.jpg",
+      "/imgs/system-design.jpg",
+    ],
   },
   {
     id: 2,
     name: "On my free Time 😊",
     date: "2023-01-01",
     place: "Los angeles, CA",
-    description: "As a junior frontend software engineer, I find great inspiration and rejuvenation in attending art shows and exhibits after work. These creative and immersive experiences offer a refreshing break from the technical challenges of my job. Art has a unique way of expanding my perspective and sparking new ideas. Whether it's through the vibrant colors, intricate designs, or thought-provoking concepts, I often discover fresh design elements and innovative user interface ideas that I can incorporate into my work. Additionally, the exposure to different forms of artistic expression helps me develop a keen eye for aesthetics and user experience, enhancing my ability to create visually appealing and user-friendly software. So, while my work may revolve around code and pixels, my visits to art shows bring a much-needed infusion of creativity, helping me become a more well-rounded and inspired software engineer.",
-    images: ["/imgs/art-show-1.jpg", "/imgs/art-show.jpg", "/imgs/art-show-2.jpg", "/imgs/art-show-3.jpg"],
+    description:
+      "As a junior frontend software engineer, I find great inspiration and rejuvenation in attending art shows and exhibits after work. These creative and immersive experiences offer a refreshing break from the technical challenges of my job. Art has a unique way of expanding my perspective and sparking new ideas. Whether it's through the vibrant colors, intricate designs, or thought-provoking concepts, I often discover fresh design elements and innovative user interface ideas that I can incorporate into my work. Additionally, the exposure to different forms of artistic expression helps me develop a keen eye for aesthetics and user experience, enhancing my ability to create visually appealing and user-friendly software. So, while my work may revolve around code and pixels, my visits to art shows bring a much-needed infusion of creativity, helping me become a more well-rounded and inspired software engineer.",
+    images: [
+      "/imgs/art-show-1.jpg",
+      "/imgs/art-show.jpg",
+      "/imgs/art-show-2.jpg",
+      "/imgs/art-show-3.jpg",
+    ],
   },
   // Add more experience items as needed
 ]
@@ -67,7 +79,7 @@ const Contact = (props: any) => {
           <span
             className={`text-2xl leading-tight text-[#171717] md:text-3xl ${props.mediumFont.className}`}
           >
-            General Expertise {" "}
+            General Expertise{" "}
             <motion.span
               animate={{
                 color: ["#75d5b9", "#cbd5e1", "#67e8f9", "#5eead4"],
@@ -79,7 +91,8 @@ const Contact = (props: any) => {
             </motion.span>
           </span>
           <p className="pt-8">
-            Web developer and lifelong curiosity seeker, working with the latest technologies.
+            Web developer and lifelong curiosity seeker, working with the latest
+            technologies.
           </p>
           <Dialog.Root>
             <Dialog.Trigger className=" pt-8 text-[#6f6f6f]">
